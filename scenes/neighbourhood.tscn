@@ -5,13 +5,3 @@
 [node name="Neighbourhood" type="Node2D"]
 
 [node name="PlayerRPG" parent="." instance=ExtResource("1_wal8v")]
-
-[node name="Tiles" type="Node" parent="."]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Tiles"]
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-text = "hello world"
-tab_size = 7
