@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://5s2vnvwdh332"]
+[gd_scene load_steps=2 format=3 uid="uid://5s2vnvwdh332"]
 
-[ext_resource type="PackedScene" uid="uid://dyphhhwl1ht4d" path="res://scenes/dream_world.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://4cu4omkgfsue" path="res://scripts/state_manager.gd" id="1_lnu2h"]
 
 [node name="Game" type="Node2D"]
-
-[node name="DreamWorld" parent="." instance=ExtResource("1_yqjtg")]
-
-[node name="Neighbourhood" parent="." instance=ExtResource("2_lnu2h")]
+script = ExtResource("1_lnu2h")

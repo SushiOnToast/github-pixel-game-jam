@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b61llwa74vcs"]
+
+[ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_d7po0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
+texture = ExtResource("1_d7po0")
+
+[sub_resource type="TileSet" id="TileSet_rk7hg"]
+sources/0 = SubResource("TileSetAtlasSource_qtlar")
+
+[node name="House" type="Node2D"]
+
+[node name="Tiles" type="Node" parent="."]
+
+[node name="walls" type="TileMapLayer" parent="Tiles"]
+
+[node name="floor" type="TileMapLayer" parent="Tiles"]
+tile_set = SubResource("TileSet_rk7hg")
+
+[node name="props" type="TileMapLayer" parent="Tiles"]
