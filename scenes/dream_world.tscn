@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyphhhwl1ht4d"]
+
+[ext_resource type="PackedScene" uid="uid://1rju0rrhr03q" path="res://scenes/player_platformer.tscn" id="1_mo1bm"]
+
+[node name="DreamWorld" type="Node2D"]
+
+[node name="PlayerPlatformer" parent="." instance=ExtResource("1_mo1bm")]
