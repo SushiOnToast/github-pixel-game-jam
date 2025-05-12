@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://1rju0rrhr03q"]
+[gd_scene load_steps=2 format=3 uid="uid://1rju0rrhr03q"]
+
+[ext_resource type="Script" uid="uid://bs8g1cnrfpmir" path="res://scripts/player_platformer.gd" id="1_10x2q"]
 
 [node name="PlayerPlatformer" type="CharacterBody2D"]
+script = ExtResource("1_10x2q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
