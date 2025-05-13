@@ -380,7 +380,7 @@ script = ExtResource("1_ura2g")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_dls5h")
 animation = &"down"
-frame_progress = 0.621658
+frame_progress = 0.36461
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9.5)
