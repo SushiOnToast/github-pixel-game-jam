@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://dyiqvy26en0q6"]
+[gd_scene load_steps=2 format=3 uid="uid://dyiqvy26en0q6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n71d5"]
 
 [node name="Neighbour" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n71d5")

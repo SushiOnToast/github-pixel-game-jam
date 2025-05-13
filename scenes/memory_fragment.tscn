@@ -143,7 +143,7 @@ shape = SubResource("CircleShape2D_i8mg3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e84gk")
 autoplay = "default"
-frame_progress = 0.543466
+frame_progress = 0.145666
 
 [node name="prompt" type="RichTextLabel" parent="."]
 offset_left = -28.0
