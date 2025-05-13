@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7vxcvoeowkvs"
-path="res://.godot/imported/Adam_16x16.png-0cec9f9c726ac281576a4a784f703e6a.ctex"
+uid="uid://b6032ldshmyi4"
+path="res://.godot/imported/Bob_idle_anim_16x16.png-4b553aa99137b3d55c016cebfd0255ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/Adam_16x16.png"
-dest_files=["res://.godot/imported/Adam_16x16.png-0cec9f9c726ac281576a4a784f703e6a.ctex"]
+source_file="res://assets/graphics/characters/bob/Bob_idle_anim_16x16.png"
+dest_files=["res://.godot/imported/Bob_idle_anim_16x16.png-4b553aa99137b3d55c016cebfd0255ee.ctex"]
 
 [params]
 

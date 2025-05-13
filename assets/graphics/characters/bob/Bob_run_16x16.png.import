@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l7lxbq6d7ajc"
-path="res://.godot/imported/Alex_16x16.png-800c7f40fc23f3ce3e3fb1818068c530.ctex"
+uid="uid://brqjbb0emg4fv"
+path="res://.godot/imported/Bob_run_16x16.png-2b732ae12b9c4b3b43d2a91bb6a0fa1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/characters/Alex_16x16.png"
-dest_files=["res://.godot/imported/Alex_16x16.png-800c7f40fc23f3ce3e3fb1818068c530.ctex"]
+source_file="res://assets/graphics/characters/bob/Bob_run_16x16.png"
+dest_files=["res://.godot/imported/Bob_run_16x16.png-2b732ae12b9c4b3b43d2a91bb6a0fa1a.ctex"]
 
 [params]
 
