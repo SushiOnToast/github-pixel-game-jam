@@ -129,7 +129,7 @@ sources/0 = SubResource("TileSetAtlasSource_deu7r")
 
 [node name="PlayerPlatformer" parent="." instance=ExtResource("1_mo1bm")]
 
-[node name="Camera2D2" type="Camera2D" parent="PlayerPlatformer"]
+[node name="Camera2D" type="Camera2D" parent="PlayerPlatformer"]
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
