@@ -1,9 +1,14 @@
-[gd_scene load_steps=31 format=3 uid="uid://1rju0rrhr03q"]
+[gd_scene load_steps=33 format=3 uid="uid://1rju0rrhr03q"]
 
-[ext_resource type="Script" uid="uid://bs8g1cnrfpmir" path="res://scripts/player_platformer.gd" id="1_10x2q"]
+[ext_resource type="Script" uid="uid://cxbuvlcurn6um" path="res://scripts/player_platformer.gd" id="1_10x2q"]
 [ext_resource type="Texture2D" uid="uid://d1sp81qtn6gyh" path="res://assets/graphics/platformer/Idle (32x32).png" id="2_moqhw"]
+[ext_resource type="Texture2D" uid="uid://3apawds83qlv" path="res://assets/graphics/platformer/Fall (32x32).png" id="2_vsirv"]
 [ext_resource type="Texture2D" uid="uid://crqiabrv03lm4" path="res://assets/graphics/platformer/Jump (32x32).png" id="3_vsirv"]
 [ext_resource type="Texture2D" uid="uid://bxm10k7beou0d" path="res://assets/graphics/platformer/Run (32x32).png" id="4_u6mks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6mks"]
+atlas = ExtResource("2_vsirv")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2f70"]
 atlas = ExtResource("2_moqhw")
@@ -103,7 +108,10 @@ region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i1o8f"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6mks")
+}],
 "loop": true,
 "name": &"fall",
 "speed": 5.0
@@ -203,9 +211,9 @@ radius = 7.0
 script = ExtResource("1_10x2q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_i1o8f")
-animation = &"idle"
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -7)

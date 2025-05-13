@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	direction[1] = Input.get_axis("up", "down")
 	
 	# normalise so that the diagonal movement isnt too fast
-	if direction != Vector2(0, 0):
+	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		
 	animate(direction)
@@ -27,17 +27,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func animate(direction):
-	if direction[0] == -1:
+	if direction == Vector2.LEFT:
 		status = "left"
-	elif direction[0] == 1:
+	elif direction == Vector2.RIGHT:
 		status = "right"
-	
-	if direction[1] == -1:
+	elif direction == Vector2.UP:
 		status = "up"
-	elif direction[1] == 1:
+	elif direction == Vector2.DOWN:
 		status = "down"
-	
-	if direction == Vector2(0, 0):
+	elif direction == Vector2.ZERO:
 		if not "idle" in status:
 			status = status + "_idle"
 	
