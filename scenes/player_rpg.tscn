@@ -370,18 +370,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvjrb"]
-size = Vector2(8, 17)
+size = Vector2(14, 22)
 
 [node name="PlayerRPG" type="CharacterBody2D"]
-z_index = 5
+z_index = 1
 script = ExtResource("1_ura2g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_dls5h")
 animation = &"down"
-frame_progress = 0.351088
+frame_progress = 0.0285813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9.5)
+z_index = 1
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_yvjrb")
