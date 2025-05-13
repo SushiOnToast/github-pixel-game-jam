@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=31 format=4 uid="uid://b5loh0re42lpl"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_wal8v"]
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
 [ext_resource type="Texture2D" uid="uid://nkic0c38n2p" path="res://assets/graphics/tilesets/exteriors/19_Graveyard_16x16.png" id="2_nq1h2"]
 [ext_resource type="Texture2D" uid="uid://d25uoyoaddj40" path="res://assets/graphics/tilesets/exteriors/7_Villas_16x16.png" id="3_21ppa"]
 [ext_resource type="Texture2D" uid="uid://cb807iwjn41hn" path="res://assets/graphics/tilesets/exteriors/1_Terrains_and_Fences_16x16.png" id="3_xw12d"]
+[ext_resource type="PackedScene" uid="uid://dyiqvy26en0q6" path="res://scenes/neighbour.tscn" id="5_78gjo"]
+[ext_resource type="Texture2D" uid="uid://qk3dpv8yv6pj" path="res://assets/graphics/characters/Amelia_idle_anim_16x16.png" id="7_lp2ac"]
+[ext_resource type="Texture2D" uid="uid://fxrxwihdmw8d" path="res://assets/graphics/characters/Alex_idle_anim_16x16.png" id="8_c3wpt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
 texture = ExtResource("2_nq1h2")
@@ -6888,6 +6891,106 @@ texture = ExtResource("3_21ppa")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xw12d")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3wpt"]
+atlas = ExtResource("7_lp2ac")
+region = Rect2(288, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3em0a"]
+atlas = ExtResource("7_lp2ac")
+region = Rect2(304, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cs87"]
+atlas = ExtResource("7_lp2ac")
+region = Rect2(320, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8evq"]
+atlas = ExtResource("7_lp2ac")
+region = Rect2(336, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdpe8"]
+atlas = ExtResource("7_lp2ac")
+region = Rect2(352, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2qjn"]
+atlas = ExtResource("7_lp2ac")
+region = Rect2(368, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsmw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3wpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3em0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cs87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8evq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdpe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2qjn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsmw3"]
+atlas = ExtResource("8_c3wpt")
+region = Rect2(288, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcyb3"]
+atlas = ExtResource("8_c3wpt")
+region = Rect2(304, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5uu"]
+atlas = ExtResource("8_c3wpt")
+region = Rect2(320, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy4h1"]
+atlas = ExtResource("8_c3wpt")
+region = Rect2(336, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmpvp"]
+atlas = ExtResource("8_c3wpt")
+region = Rect2(352, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iswku"]
+atlas = ExtResource("8_c3wpt")
+region = Rect2(368, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgikh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsmw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcyb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy4h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmpvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iswku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="Neighbourhood" type="Node2D"]
 y_sort_enabled = true
 
@@ -6993,3 +7096,23 @@ position = Vector2(66, -52)
 [node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="Neighbours" type="Node" parent="."]
+
+[node name="Neighbour" parent="Neighbours" instance=ExtResource("5_78gjo")]
+position = Vector2(425, 25)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Neighbours/Neighbour"]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_hsmw3")
+autoplay = "default"
+frame_progress = 0.878911
+
+[node name="Neighbour2" parent="Neighbours" instance=ExtResource("5_78gjo")]
+position = Vector2(-60, 37)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Neighbours/Neighbour2"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_xgikh")
+autoplay = "default"
+frame_progress = 0.759355
