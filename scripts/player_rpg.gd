@@ -35,6 +35,7 @@ func animate(direction):
 		status = "up"
 	elif direction == Vector2.DOWN:
 		status = "down"
+	
 	elif direction == Vector2.ZERO:
 		if not "idle" in status:
 			status = status + "_idle"

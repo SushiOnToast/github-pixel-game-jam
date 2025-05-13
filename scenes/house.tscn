@@ -12,8 +12,6 @@ sources/0 = SubResource("TileSetAtlasSource_qtlar")
 
 [node name="Tiles" type="Node" parent="."]
 
-[node name="walls" type="TileMapLayer" parent="Tiles"]
-
 [node name="floor" type="TileMapLayer" parent="Tiles"]
 tile_set = SubResource("TileSet_rk7hg")
 
