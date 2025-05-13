@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
+@export var walk_speed = 200.0
+@export_range(0, 1) var deceleration = 0.1
+
 const JUMP_VELOCITY = -400.0
 var moving = false
 var status = "idle"
@@ -26,10 +28,10 @@ func _physics_process(delta: float) -> void:
 		elif direction < 0:
 			animated_sprite.flip_h = true
 		moving = true
-		velocity.x = direction * SPEED
+		velocity.x = direction * walk_speed
 	else:
 		moving = false
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 		
 	animate(moving)
 
