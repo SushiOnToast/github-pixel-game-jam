@@ -1,34 +1,39 @@
 extends Node2D
 
 var world := "neighbourhood"
+# world paths
+const NEIGHBOURHOOD_PATH = "res://scenes/neighbourhood.tscn"
+const DREAM_PATH = "res://scenes/dream_world.tscn"
 
-var neighbourhood_scene: Node2D
-var dream_scene: Node2D
+var current_scene: Node2D = null
+var saved_scenes: Dictionary = {}
 
-func _ready() -> void:
-	# Instance both scenes once
-	neighbourhood_scene = preload("res://scenes/neighbourhood.tscn").instantiate()
-	dream_scene = preload("res://scenes/dream_world.tscn").instantiate()
-
-	# Add them both to the current scene tree
-	add_child(neighbourhood_scene)
-	add_child(dream_scene)
-
-	# Start with only neighbourhood visible
-	neighbourhood_scene.visible = true
-	dream_scene.visible = false
-
+func switch_to(scene_path: String, scene_key: String) -> void:
+	# if current scene exists, remove it but preserve state
+	if current_scene:
+		remove_child(current_scene)
+		
+		saved_scenes[current_scene.name] = current_scene
+		
+	if saved_scenes.has(scene_key):
+		current_scene = saved_scenes[scene_key]
+	else:
+		var scene_resource = load(scene_path)
+		current_scene = scene_resource.instantiate()
+		saved_scenes[scene_key] = current_scene
+		
+	add_child(current_scene)
 
 func switch_world() -> void:
 	if world == "neighbourhood":
 		world = "dream"
-		neighbourhood_scene.visible = false
-		dream_scene.visible = true
+		switch_to(DREAM_PATH, "DreamWorld")
 	elif world == "dream":
 		world = "neighbourhood"
-		neighbourhood_scene.visible = true
-		dream_scene.visible = false
+		switch_to(NEIGHBOURHOOD_PATH, "Neighbourhood")
 		
+func _ready() -> void:
+	switch_to(NEIGHBOURHOOD_PATH, "Neighbourhood")
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch world"):
