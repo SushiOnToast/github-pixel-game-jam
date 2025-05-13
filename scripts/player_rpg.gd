@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
-#var status = "down_idle"
+var status = "down_idle"
 #
-#@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if direction != Vector2(0, 0):
 		direction = direction.normalized()
 		
-	#animate(direction)
+	animate(direction)
 	
 	# change position
 	position.x += delta * direction[0] * SPEED
@@ -26,20 +26,20 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-#func animate(direction):
-	#if direction[0] == -1:
-		#status = "left"
-	#elif direction[0] == 1:
-		#status = "right"
-	#
-	#if direction[1] == -1:
-		#status = "up"
-	#elif direction[1] == 1:
-		#status = "down"
-	#
-	#if direction == Vector2(0, 0):
-		#if not "idle" in status:
-			#status = status + "_idle"
-	#
-	#animated_sprite.play(status)
+func animate(direction):
+	if direction[0] == -1:
+		status = "left"
+	elif direction[0] == 1:
+		status = "right"
+	
+	if direction[1] == -1:
+		status = "up"
+	elif direction[1] == 1:
+		status = "down"
+	
+	if direction == Vector2(0, 0):
+		if not "idle" in status:
+			status = status + "_idle"
+	
+	animated_sprite.play(status)
 		#
