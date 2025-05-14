@@ -11,7 +11,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("jump or interact"):
-		state_manager.switch_world()
+		#state_manager.switch_world()
+		pass
 
 func _on_body_entered(body: Node2D) -> void:
 	prompt.visible = true
