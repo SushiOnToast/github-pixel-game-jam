@@ -7,7 +7,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_n71d5"]
 
 [node name="Neighbour" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
+y_sort_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_dehqy")

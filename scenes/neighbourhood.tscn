@@ -11353,8 +11353,6 @@ position_smoothing_enabled = true
 [node name="Neighbours" type="Node" parent="."]
 
 [node name="Neighbour" parent="Neighbours" instance=ExtResource("5_78gjo")]
-z_index = 2
-y_sort_enabled = true
 position = Vector2(-57, 38)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Neighbours/Neighbour"]
