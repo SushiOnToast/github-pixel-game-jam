@@ -374,7 +374,7 @@ animations = [{
 size = Vector2(15.5, 20)
 
 [node name="PlayerRPG" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_ura2g")
 
