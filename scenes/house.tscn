@@ -1,9 +1,164 @@
-[gd_scene load_steps=4 format=3 uid="uid://b61llwa74vcs"]
+[gd_scene load_steps=4 format=4 uid="uid://b61llwa74vcs"]
 
 [ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_d7po0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
 texture = ExtResource("1_d7po0")
+0:19/size_in_atlas = Vector2i(1, 2)
+0:19/0 = 0
+1:19/size_in_atlas = Vector2i(1, 2)
+1:19/0 = 0
+2:19/size_in_atlas = Vector2i(1, 2)
+2:19/0 = 0
+3:19/size_in_atlas = Vector2i(1, 2)
+3:19/0 = 0
+0:17/size_in_atlas = Vector2i(1, 2)
+0:17/0 = 0
+1:17/size_in_atlas = Vector2i(1, 2)
+1:17/0 = 0
+2:17/size_in_atlas = Vector2i(1, 2)
+2:17/0 = 0
+3:17/size_in_atlas = Vector2i(1, 2)
+3:17/0 = 0
+0:15/size_in_atlas = Vector2i(1, 2)
+0:15/0 = 0
+1:15/size_in_atlas = Vector2i(1, 2)
+1:15/0 = 0
+2:15/size_in_atlas = Vector2i(1, 2)
+2:15/0 = 0
+3:15/size_in_atlas = Vector2i(1, 2)
+3:15/0 = 0
+0:13/size_in_atlas = Vector2i(1, 2)
+0:13/0 = 0
+1:13/size_in_atlas = Vector2i(1, 2)
+1:13/0 = 0
+2:13/size_in_atlas = Vector2i(1, 2)
+2:13/0 = 0
+3:13/size_in_atlas = Vector2i(1, 2)
+3:13/0 = 0
+0:11/size_in_atlas = Vector2i(1, 2)
+0:11/0 = 0
+1:11/size_in_atlas = Vector2i(1, 2)
+1:11/0 = 0
+2:11/size_in_atlas = Vector2i(1, 2)
+2:11/0 = 0
+3:11/size_in_atlas = Vector2i(1, 2)
+3:11/0 = 0
+0:9/size_in_atlas = Vector2i(1, 2)
+0:9/0 = 0
+1:9/size_in_atlas = Vector2i(1, 2)
+1:9/0 = 0
+2:9/size_in_atlas = Vector2i(1, 2)
+2:9/0 = 0
+3:9/size_in_atlas = Vector2i(1, 2)
+3:9/0 = 0
+0:7/size_in_atlas = Vector2i(1, 2)
+0:7/0 = 0
+1:7/size_in_atlas = Vector2i(1, 2)
+1:7/0 = 0
+2:7/size_in_atlas = Vector2i(1, 2)
+2:7/0 = 0
+3:7/size_in_atlas = Vector2i(1, 2)
+3:7/0 = 0
+0:5/size_in_atlas = Vector2i(1, 2)
+0:5/0 = 0
+1:5/size_in_atlas = Vector2i(1, 2)
+1:5/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+3:5/size_in_atlas = Vector2i(1, 2)
+3:5/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+16:9/0 = 0
+15:9/0 = 0
+14:9/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+15:7/0 = 0
+14:7/0 = 0
+16:7/0 = 0
+16:6/0 = 0
+15:6/0 = 0
+14:6/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+13:12/0 = 0
+13:11/0 = 0
+12:11/0 = 0
+12:12/0 = 0
+11:12/0 = 0
+11:11/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+11:9/0 = 0
+13:10/0 = 0
+13:8/0 = 0
+13:7/0 = 0
+12:7/0 = 0
+12:8/0 = 0
+11:8/0 = 0
+11:7/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+13:6/0 = 0
+12:6/0 = 0
+11:6/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+16:12/0 = 0
+15:12/0 = 0
+14:12/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+9:3/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+11:2/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+13:1/0 = 0
+13:2/0 = 0
+12:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+15:1/0 = 0
+16:0/0 = 0
+16:1/0 = 0
+14:2/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+16:3/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+13:14/0 = 0
+12:14/0 = 0
+11:14/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rk7hg"]
 sources/0 = SubResource("TileSetAtlasSource_qtlar")
@@ -13,6 +168,11 @@ sources/0 = SubResource("TileSetAtlasSource_qtlar")
 [node name="Tiles" type="Node" parent="."]
 
 [node name="floor" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAD8//3/AAALAA0AAAD8//7/AAALAA4AAAD9//3/AAAMAA0AAAD9//7/AAAMAA4AAAD+//3/AAANAA0AAAD+//7/AAANAA4AAAD8////AAALAA0AAAD8/wAAAAALAA4AAAD9////AAAMAA0AAAD9/wAAAAAMAA4AAAD+////AAANAA0AAAD+/wAAAAANAA4AAAD8/wEAAAALAA0AAAD8/wIAAAALAA4AAAD9/wEAAAAMAA0AAAD9/wIAAAAMAA4AAAD+/wEAAAANAA0AAAD+/wIAAAANAA4AAAD8/wMAAAALAA0AAAD9/wMAAAAMAA0AAAD+/wMAAAANAA0AAAD///3/AAALAA0AAAD///7/AAALAA4AAAAAAP3/AAAMAA0AAAAAAP7/AAAMAA4AAAABAP3/AAANAA0AAAABAP7/AAANAA4AAAD/////AAALAA0AAAD//wAAAAALAA4AAAAAAP//AAAMAA0AAAAAAAAAAAAMAA4AAAABAP//AAANAA0AAAABAAAAAAANAA4AAAD//wEAAAALAA0AAAD//wIAAAALAA4AAAAAAAEAAAAMAA0AAAAAAAIAAAAMAA4AAAABAAEAAAANAA0AAAABAAIAAAANAA4AAAD//wMAAAALAA0AAAAAAAMAAAAMAA0AAAABAAMAAAANAA0AAAACAP3/AAALAA0AAAACAP7/AAALAA4AAAADAP3/AAAMAA0AAAADAP7/AAAMAA4AAAAEAP3/AAANAA0AAAAEAP7/AAANAA4AAAACAP//AAALAA0AAAACAAAAAAALAA4AAAADAP//AAAMAA0AAAADAAAAAAAMAA4AAAAEAP//AAANAA0AAAAEAAAAAAANAA4AAAACAAEAAAALAA0AAAACAAIAAAALAA4AAAADAAEAAAAMAA0AAAADAAIAAAAMAA4AAAAEAAEAAAANAA0AAAAEAAIAAAANAA4AAAACAAMAAAALAA0AAAADAAMAAAAMAA0AAAAEAAMAAAANAA0AAAA=")
+tile_set = SubResource("TileSet_rk7hg")
+
+[node name="border" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAD7/wIAAAALAAIAAAD7/wEAAAALAAIAAAD7/wAAAAALAAIAAAD7////AAALAAIAAAD7//7/AAALAAIAAAD7//3/AAALAAEAAAD8//3/AAAMAAMAAAD9//3/AAAMAAMAAAD+//3/AAAMAAMAAAD///3/AAAMAAMAAAAAAP3/AAAMAAMAAAABAP3/AAAMAAMAAAACAP3/AAAMAAMAAAAEAP3/AAAMAAMAAAADAP3/AAAMAAMAAAAFAP3/AAANAAEAAAAFAP7/AAANAAIAAAAFAP//AAANAAIAAAAFAAAAAAANAAIAAAAFAAEAAAANAAIAAAAFAAIAAAANAAIAAAAFAAMAAAANAAIAAAAEAAQAAAAMAAMAAAADAAQAAAAMAAMAAAACAAQAAAAMAAMAAAABAAQAAAAMAAMAAAAAAAQAAAAMAAMAAAD//wQAAAAMAAMAAAD+/wQAAAAMAAMAAAD9/wQAAAAMAAMAAAD8/wQAAAAMAAMAAAD7/wMAAAALAAIAAAD7/wQAAAALAAMAAAAFAAQAAAANAAMAAAA=")
 tile_set = SubResource("TileSet_rk7hg")
 
 [node name="props" type="TileMapLayer" parent="Tiles"]
