@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=28 format=4 uid="uid://b5loh0re42lpl"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_wal8v"]
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3532l2xhdw36" path="res://assets/graphics/tilesets/exteriors/3_City_Props_16x16.png" id="5_3em0a"]
 [ext_resource type="PackedScene" uid="uid://dyiqvy26en0q6" path="res://scenes/neighbour.tscn" id="5_78gjo"]
 [ext_resource type="Texture2D" uid="uid://qk3dpv8yv6pj" path="res://assets/graphics/characters/Amelia_idle_anim_16x16.png" id="7_lp2ac"]
-[ext_resource type="Script" path="res://scripts/day_night_canvas.gd" id="10_8cs87"]
+[ext_resource type="Script" uid="uid://cpyfl3h8rsqoy" path="res://scripts/day_night_canvas.gd" id="10_8cs87"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
@@ -11234,9 +11234,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8cs87"]
-radius = 7.0
-
 [node name="Neighbourhood" type="Node2D"]
 y_sort_enabled = true
 
@@ -11347,7 +11344,7 @@ tile_set = SubResource("TileSet_c3wpt")
 position = Vector2(66, -52)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
-zoom = Vector2(8, 8)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="Neighbours" type="Node" parent="."]
@@ -11360,12 +11357,6 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_ix5uu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Neighbours/Neighbour"]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(0, 5)
-shape = SubResource("CircleShape2D_8cs87")
 
 [node name="DayNightManager" type="Node" parent="."]
 

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="2_edyne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n71d5"]
+radius = 16.0
 
 [node name="Neighbour" type="CharacterBody2D"]
 z_index = 2

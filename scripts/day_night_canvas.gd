@@ -1,7 +1,7 @@
 extends CanvasModulate
 
-const MINUTES_PER_DAY = 1440
-const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
+@onready var neighbours: Node = $"../../Neighbours"
+
 const CYCLE_DURATION = PI/2  # One full sine wave cycle
 
 @export var gradient: GradientTexture1D
@@ -13,16 +13,30 @@ var cycle_finished: bool = false
 func _process(delta: float) -> void:
 	if cycle_finished:
 		return
+		
+	#if not done_checked and _all_neighbours_interacted():
+		#print("done")
+		#done_checked = true
+		
+	var all_interaction = _all_neighbours_interacted()
 	
 	time += delta / cycle_speed
 	
-	var value = (sin(time - (PI/2)) + 1.0)
+	var value = (sin(time - (PI / 2)) + 1.0)
 	self.color = gradient.gradient.sample(value)
 	
 	if time >= CYCLE_DURATION:
 		cycle_finished = true
 	
-	_recalculate_time()
-
-func _recalculate_time() -> void:
-	var total_minutes = int(time / INGAME_TO_REAL_MINUTE_DURATION)
+	if all_interaction:
+		pass
+		
+#func _all_neighbours_interacted():
+func _all_neighbours_interacted() -> bool:
+	for child in neighbours.get_children():
+		var c = child.get_children()[0]
+		if c == null or not c.had_interaction:
+			return false
+		else:
+			c.night = true	
+	return true
