@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyiqvy26en0q6"]
+[gd_scene load_steps=5 format=3 uid="uid://dyiqvy26en0q6"]
 
 [ext_resource type="Script" uid="uid://d2c45o7xo28na" path="res://scripts/neighbour_area2d.gd" id="1_dehqy"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="2_5mroy"]
+[ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="2_edyne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n71d5"]
 radius = 16.0
@@ -16,15 +17,24 @@ script = ExtResource("1_dehqy")
 z_index = 1
 shape = SubResource("CircleShape2D_n71d5")
 
-[node name="prompt" type="RichTextLabel" parent="Area2D"]
-offset_left = -37.0
-offset_top = -31.0
-offset_right = 38.0
-offset_bottom = -10.0
-theme_override_fonts/normal_font = ExtResource("2_5mroy")
-theme_override_font_sizes/normal_font_size = 8
-text = "Press SPACE to Interact"
-autowrap_mode = 2
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+z_index = 1
+offset_left = -20.0001
+offset_top = -24.0
+offset_right = -4.00006
+offset_bottom = -8.0
+texture = ExtResource("2_edyne")
+
+[node name="Label" type="Label" parent="Area2D"]
+z_index = 1
+offset_left = -6.00006
+offset_top = -20.0
+offset_right = 1.99994
+offset_bottom = -5.0
+rotation = 1.56808
+theme_override_fonts/font = ExtResource("2_5mroy")
+theme_override_font_sizes/font_size = 8
+text = "]"
 horizontal_alignment = 1
 vertical_alignment = 1
 

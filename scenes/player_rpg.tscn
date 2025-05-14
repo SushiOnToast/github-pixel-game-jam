@@ -1,8 +1,9 @@
-[gd_scene load_steps=52 format=3 uid="uid://wtcsvenvwhjc"]
+[gd_scene load_steps=53 format=3 uid="uid://wtcsvenvwhjc"]
 
 [ext_resource type="Script" uid="uid://dch8ogs24xy2f" path="res://scripts/player_rpg.gd" id="1_ura2g"]
 [ext_resource type="Texture2D" uid="uid://b6032ldshmyi4" path="res://assets/graphics/characters/bob/Bob_idle_anim_16x16.png" id="2_yvjrb"]
 [ext_resource type="Texture2D" uid="uid://brqjbb0emg4fv" path="res://assets/graphics/characters/bob/Bob_run_16x16.png" id="3_wggy0"]
+[ext_resource type="Texture2D" uid="uid://ciba1cbjjdugn" path="res://assets/graphics/UI/WASD.png" id="4_wggy0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1klcg"]
 atlas = ExtResource("3_wggy0")
@@ -389,3 +390,11 @@ offset = Vector2(0, -15)
 z_index = 1
 position = Vector2(-0.25, -10)
 shape = SubResource("RectangleShape2D_yvjrb")
+
+[node name="ControlPrompt" type="TextureRect" parent="."]
+z_index = 1
+offset_left = -18.0
+offset_top = -46.0
+offset_right = 17.0
+offset_bottom = -23.0
+texture = ExtResource("4_wggy0")

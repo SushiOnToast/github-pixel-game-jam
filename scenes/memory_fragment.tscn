@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://206m4cggween"]
+[gd_scene load_steps=24 format=3 uid="uid://206m4cggween"]
 
 [ext_resource type="Texture2D" uid="uid://cfv576bn8b555" path="res://assets/graphics/platformer/Strawberry.png" id="1_i8mg3"]
 [ext_resource type="Script" uid="uid://bgsfqavdbemkg" path="res://scripts/memory_fragment.gd" id="1_id57q"]
+[ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="3_82mqf"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="3_qyr3t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8mg3"]
@@ -145,19 +146,21 @@ sprite_frames = SubResource("SpriteFrames_e84gk")
 autoplay = "default"
 frame_progress = 0.145666
 
-[node name="prompt" type="RichTextLabel" parent="."]
-offset_left = -28.0
-offset_top = -26.0
-offset_right = 30.0
-offset_bottom = -6.0
-theme_override_fonts/normal_font = ExtResource("3_qyr3t")
-theme_override_font_sizes/normal_font_size = 8
-text = "Press E to Collect"
-autowrap_mode = 2
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -18.0
+offset_top = -21.0
+offset_right = -2.0
+offset_bottom = -5.0
+texture = ExtResource("3_82mqf")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="prompt"]
+[node name="Label" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -16.0
+offset_right = 27.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("3_qyr3t")
+theme_override_font_sizes/font_size = 8
+text = "E"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
