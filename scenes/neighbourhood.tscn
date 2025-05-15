@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=31 format=4 uid="uid://b5loh0re42lpl"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_wal8v"]
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cpyfl3h8rsqoy" path="res://scripts/day_night_canvas.gd" id="10_8cs87"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="11_xdpe8"]
+[ext_resource type="PackedScene" uid="uid://b61llwa74vcs" path="res://scenes/houses/house1.tscn" id="12_xdpe8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
 texture = ExtResource("2_nq1h2")
@@ -11374,6 +11375,7 @@ gradient = ExtResource("11_p8evq")
 
 [node name="TPZone" parent="TPZones" instance=ExtResource("11_xdpe8")]
 position = Vector2(572, 63)
+to_scene = ExtResource("12_xdpe8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone"]
 position = Vector2(-1.75, -5.5)
