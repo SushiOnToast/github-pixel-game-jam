@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bapx8bjrwrida"]
+
+[ext_resource type="Script" uid="uid://b4bsm68uoaqwv" path="res://scripts/tp_zone.gd" id="1_cp4dn"]
+[ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="2_rki24"]
+[ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="3_ceu0u"]
+
+[node name="TPZone" type="Area2D"]
+script = ExtResource("1_cp4dn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+offset_left = -20.0001
+offset_top = -24.0
+offset_right = -4.00006
+offset_bottom = -8.0
+texture = ExtResource("2_rki24")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = -16.0
+offset_top = -22.0
+offset_right = -8.0
+offset_bottom = -7.0
+rotation = -0.000876047
+theme_override_fonts/font = ExtResource("3_ceu0u")
+theme_override_font_sizes/font_size = 8
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

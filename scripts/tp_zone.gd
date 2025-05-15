@@ -1,5 +1,8 @@
 extends Area2D
 
+@export var house_id = null
+@export var environment = "neighbourhood"
+
 @onready var state_manager: StateManager
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
@@ -20,8 +23,7 @@ func _process(delta: float) -> void:
 		label.visible = false
 	
 	if player_in_area and Input.is_action_just_pressed("interact"):
-		state_manager.switch_world()
-		queue_free()
+		state_manager.switch_to("res://scenes/houses/house_1.tscn", "House1")
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	player_in_area = true
