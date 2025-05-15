@@ -29,14 +29,15 @@ func _process(delta: float) -> void:
 		var balloon: BaseDialogueBalloon = balloon_scene.instantiate()
 		get_tree().current_scene.add_child(balloon)
 		balloon.start(load("res://dialogue/conversations/NPC1.dialogue"), "start")
+		
+		while is_instance_valid(balloon) and balloon.get_parent() != null:
+			await get_tree().process_frame
+		
 		had_interaction = true
 		num_interactions += 1
 	elif night and player_in_area and Input.is_action_just_pressed("jump or interact") and num_interactions == 1:
 		num_interactions += 1
 		state_manager.switch_world()
-		
-	if night:
-		print("night")
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	player_in_area = true

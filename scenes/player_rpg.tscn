@@ -1,9 +1,22 @@
-[gd_scene load_steps=53 format=3 uid="uid://wtcsvenvwhjc"]
+[gd_scene load_steps=56 format=3 uid="uid://wtcsvenvwhjc"]
 
 [ext_resource type="Script" uid="uid://dch8ogs24xy2f" path="res://scripts/player_rpg.gd" id="1_ura2g"]
 [ext_resource type="Texture2D" uid="uid://b6032ldshmyi4" path="res://assets/graphics/characters/bob/Bob_idle_anim_16x16.png" id="2_yvjrb"]
+[ext_resource type="Script" uid="uid://dkf2o357dgqwc" path="res://scripts/player_light.gd" id="3_smo8x"]
 [ext_resource type="Texture2D" uid="uid://brqjbb0emg4fv" path="res://assets/graphics/characters/bob/Bob_run_16x16.png" id="3_wggy0"]
 [ext_resource type="Texture2D" uid="uid://ciba1cbjjdugn" path="res://assets/graphics/UI/WASD.png" id="4_wggy0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvjrb"]
+size = Vector2(15.5, 20)
+
+[sub_resource type="Gradient" id="Gradient_wggy0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_smo8x"]
+gradient = SubResource("Gradient_wggy0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.176829, 0.865854)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1klcg"]
 atlas = ExtResource("3_wggy0")
@@ -370,21 +383,10 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvjrb"]
-size = Vector2(15.5, 20)
-
 [node name="PlayerRPG" type="CharacterBody2D"]
 z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_ura2g")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, 1)
-sprite_frames = SubResource("SpriteFrames_dls5h")
-animation = &"down"
-frame_progress = 0.621658
-offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -398,3 +400,20 @@ offset_top = -46.0
 offset_right = 17.0
 offset_bottom = -23.0
 texture = ExtResource("4_wggy0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(9.53674e-07, -10)
+scale = Vector2(0.0863095, 0.0863095)
+color = Color(0.790955, 0.832294, 0.678074, 1)
+texture = SubResource("GradientTexture2D_smo8x")
+texture_scale = 11.55
+height = 263.0
+script = ExtResource("3_smo8x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_dls5h")
+animation = &"down"
+frame_progress = 0.621658
+offset = Vector2(0, -15)

@@ -11357,6 +11357,8 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_ix5uu")
+autoplay = "default"
+frame_progress = 0.167988
 
 [node name="DayNightManager" type="Node" parent="."]
 
