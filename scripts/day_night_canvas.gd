@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 		cycle_finished = true
 	
 	if all_interaction:
+		# i want the current colour to fade to another colour
 		pass
 		
 #func _all_neighbours_interacted():

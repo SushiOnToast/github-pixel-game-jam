@@ -23,7 +23,7 @@ func switch_to(scene_path: String, scene_key: String) -> void:
 		var scene_resource = load(scene_path)
 		current_scene = scene_resource.instantiate()
 		saved_scenes[scene_key] = current_scene
-
+	
 	add_child(current_scene)
 
 func switch_world() -> void:
@@ -33,6 +33,7 @@ func switch_world() -> void:
 	else:
 		world = "neighbourhood"
 		switch_to(NEIGHBOURHOOD_PATH, "Neighbourhood")
+		
 
 func initialize() -> void:
 	switch_to(NEIGHBOURHOOD_PATH, "Neighbourhood")
