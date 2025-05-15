@@ -9,6 +9,8 @@ var balloon_scene = preload("res://dialogue/dialogue_balloon.tscn")
 
 var player_in_area = false
 var num_interactions = 0
+var is_talking := false
+
 @export var had_interaction = false
 @export var night = false
 
@@ -25,16 +27,19 @@ func _process(delta: float) -> void:
 		texture_rect.visible = false
 		label.visible = false
 		
-	if player_in_area and Input.is_action_just_pressed("interact") and not had_interaction and not night:
+	if player_in_area and Input.is_action_just_pressed("interact") and not had_interaction and not night and not is_talking:
+		is_talking = true
 		var balloon: BaseDialogueBalloon = balloon_scene.instantiate()
 		get_tree().current_scene.add_child(balloon)
 		balloon.start(load("res://dialogue/conversations/NPC1.dialogue"), "start")
-		
+
 		while is_instance_valid(balloon) and balloon.get_parent() != null:
 			await get_tree().process_frame
-		
+
 		had_interaction = true
 		num_interactions += 1
+		is_talking = false
+
 	elif night and player_in_area and Input.is_action_just_pressed("interact") and num_interactions == 1:
 		num_interactions += 1
 		state_manager.switch_world()
