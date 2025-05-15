@@ -12,7 +12,7 @@ func _ready() -> void:
 	state_manager = get_tree().get_root().find_child("StateManager", true, false)
 	
 func _process(delta: float) -> void:
-	if player_in_area and Input.is_action_just_pressed("pick up"):
+	if player_in_area and Input.is_action_just_pressed("interact"):
 		state_manager.switch_world()
 		queue_free()
 

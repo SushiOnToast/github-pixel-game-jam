@@ -34,14 +34,14 @@ func _physics_process(delta: float) -> void:
 	jump_buffer_timer -= delta
 
 	# Buffer jump input
-	if Input.is_action_just_pressed("jump or interact"):
+	if Input.is_action_just_pressed("jump"):
 		jump_buffer_timer = jump_buffer_time
 
 	# Gravity with better jump feel
 	if not is_on_floor():
 		if velocity.y > 0:
 			velocity += get_gravity() * delta * fall_multiplier
-		elif velocity.y < 0 and not Input.is_action_pressed("jump or interact"):
+		elif velocity.y < 0 and not Input.is_action_pressed("jump"):
 			velocity += get_gravity() * delta * low_jump_multiplier
 		else:
 			velocity += get_gravity() * delta
@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 			jump_buffer_timer = 0
 
 	# Short hop
-	if Input.is_action_just_released("jump or interact") and velocity.y < 0:
+	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
 
 	# Apply movement

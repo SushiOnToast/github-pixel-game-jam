@@ -28,14 +28,14 @@ texture = ExtResource("2_edyne")
 
 [node name="Label" type="Label" parent="Area2D"]
 z_index = 1
-offset_left = -6.00006
-offset_top = -20.0
-offset_right = 1.99994
-offset_bottom = -5.0
-rotation = 1.56808
+offset_left = -16.0
+offset_top = -22.0
+offset_right = -8.0
+offset_bottom = -7.0
+rotation = -0.000876047
 theme_override_fonts/font = ExtResource("2_5mroy")
 theme_override_font_sizes/font_size = 8
-text = "]"
+text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 

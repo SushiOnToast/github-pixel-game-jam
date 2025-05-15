@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		texture_rect.visible = false
 		label.visible = false
 		
-	if player_in_area and Input.is_action_just_pressed("jump or interact") and not had_interaction and not night:
+	if player_in_area and Input.is_action_just_pressed("interact") and not had_interaction and not night:
 		var balloon: BaseDialogueBalloon = balloon_scene.instantiate()
 		get_tree().current_scene.add_child(balloon)
 		balloon.start(load("res://dialogue/conversations/NPC1.dialogue"), "start")
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 		
 		had_interaction = true
 		num_interactions += 1
-	elif night and player_in_area and Input.is_action_just_pressed("jump or interact") and num_interactions == 1:
+	elif night and player_in_area and Input.is_action_just_pressed("interact") and num_interactions == 1:
 		num_interactions += 1
 		state_manager.switch_world()
 

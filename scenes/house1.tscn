@@ -2424,7 +2424,7 @@ texture = ExtResource("2_qtlar")
 [sub_resource type="TileSet" id="TileSet_se78b"]
 sources/0 = SubResource("TileSetAtlasSource_rk7hg")
 
-[node name="House" type="Node2D"]
+[node name="House1" type="Node2D"]
 
 [node name="Tiles" type="Node" parent="."]
 

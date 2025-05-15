@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 		cycle_finished = true
 		is_night = true	
 	
-	if is_night:
+	if all_interaction:
 		self.color = Color("#1e2237")
 		
 #func _all_neighbours_interacted():
