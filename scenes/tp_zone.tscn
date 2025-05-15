@@ -1,45 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bapx8bjrwrida"]
+[gd_scene load_steps=4 format=3 uid="uid://bapx8bjrwrida"]
 
 [ext_resource type="Script" uid="uid://b4bsm68uoaqwv" path="res://scripts/tp_zone.gd" id="1_cp4dn"]
 [ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="2_rki24"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="3_ceu0u"]
-
-[sub_resource type="Animation" id="Animation_rki24"]
-resource_name = "RESET"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ceu0u"]
-resource_name = "dissolve"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jenm"]
-_data = {
-&"RESET": SubResource("Animation_rki24"),
-&"dissolve": SubResource("Animation_ceu0u")
-}
 
 [node name="TPZone" type="Area2D"]
 script = ExtResource("1_cp4dn")
@@ -64,21 +27,6 @@ theme_override_font_sizes/font_size = 8
 text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Transition" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Transition"]
-modulate = Color(1, 1, 1, 0)
-offset_right = 1153.0
-offset_bottom = 649.0
-mouse_filter = 2
-color = Color(0.133333, 0.12549, 0.203922, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
-libraries = {
-&"": SubResource("AnimationLibrary_5jenm")
-}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
