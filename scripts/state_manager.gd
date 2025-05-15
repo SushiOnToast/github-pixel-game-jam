@@ -3,6 +3,8 @@ extends Node
 
 class_name StateManager  # This allows you to reference it anywhere via `StateManager`
 
+@onready var animation_player: AnimationPlayer = $Transition/AnimationPlayer
+
 var world := "neighbourhood"
 
 # world paths
@@ -13,6 +15,9 @@ var current_scene: Node2D = null
 var saved_scenes: Dictionary = {}
 
 func switch_to(scene_path: String, scene_key: String) -> void:
+	animation_player.play("dissolve")
+	await animation_player.animation_finished
+	
 	if current_scene:
 		remove_child(current_scene)
 		saved_scenes[current_scene.name] = current_scene
@@ -25,7 +30,8 @@ func switch_to(scene_path: String, scene_key: String) -> void:
 		saved_scenes[scene_key] = current_scene
 	
 	add_child(current_scene)
-
+	animation_player.play_backwards("dissolve")
+	
 func switch_world() -> void:
 	if world == "neighbourhood":
 		world = "dream"

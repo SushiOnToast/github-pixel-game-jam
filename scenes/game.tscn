@@ -1,8 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://5s2vnvwdh332"]
+[gd_scene load_steps=6 format=3 uid="uid://5s2vnvwdh332"]
 
 [ext_resource type="Script" uid="uid://4cu4omkgfsue" path="res://scripts/state_manager.gd" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://4bh0i6vxw4cd" path="res://scripts/game.gd" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bh21p1bhfl1ti" path="res://scenes/scene_transition.tscn" id="3_lnu2h"]
+
+[sub_resource type="Animation" id="Animation_rki24"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ceu0u"]
+resource_name = "dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jenm"]
+_data = {
+&"RESET": SubResource("Animation_rki24"),
+&"dissolve": SubResource("Animation_ceu0u")
+}
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_yqjtg")
@@ -10,4 +46,17 @@ script = ExtResource("1_yqjtg")
 [node name="StateManager" type="Node" parent="."]
 script = ExtResource("1_lnu2h")
 
-[node name="SceneTransition" parent="StateManager" instance=ExtResource("3_lnu2h")]
+[node name="Transition" type="CanvasLayer" parent="StateManager"]
+
+[node name="ColorRect" type="ColorRect" parent="StateManager/Transition"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1153.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0.133333, 0.12549, 0.203922, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StateManager/Transition"]
+libraries = {
+&"": SubResource("AnimationLibrary_5jenm")
+}

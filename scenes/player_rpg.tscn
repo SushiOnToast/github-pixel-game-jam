@@ -405,6 +405,7 @@ texture = ExtResource("4_wggy0")
 position = Vector2(9.53674e-07, -10)
 scale = Vector2(0.0863095, 0.0863095)
 color = Color(0.790955, 0.832294, 0.678074, 1)
+energy = 0.5
 texture = SubResource("GradientTexture2D_smo8x")
 texture_scale = 11.55
 height = 263.0
