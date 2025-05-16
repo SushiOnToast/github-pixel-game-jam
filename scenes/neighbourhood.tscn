@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=45 format=4 uid="uid://b5loh0re42lpl"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_wal8v"]
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dyiqvy26en0q6" path="res://scenes/neighbour.tscn" id="5_78gjo"]
 [ext_resource type="Texture2D" uid="uid://qk3dpv8yv6pj" path="res://assets/graphics/characters/Amelia_idle_anim_16x16.png" id="7_lp2ac"]
 [ext_resource type="Script" uid="uid://cpyfl3h8rsqoy" path="res://scripts/day_night_canvas.gd" id="10_8cs87"]
+[ext_resource type="PackedScene" uid="uid://don5osiihhgog" path="res://scenes/dreams/dream1.tscn" id="10_j2qjn"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="11_xdpe8"]
 [ext_resource type="PackedScene" uid="uid://b61llwa74vcs" path="res://scenes/houses/house1.tscn" id="12_xdpe8"]
@@ -18385,6 +18386,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2qjn"]
+radius = 16.1245
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2qjn"]
 size = Vector2(9.5, 11)
 
@@ -18566,9 +18570,13 @@ sprite_frames = SubResource("SpriteFrames_ix5uu")
 autoplay = "default"
 frame_progress = 0.167988
 
-[node name="DayNightManager" type="Node" parent="."]
+[node name="TPZone" parent="Neighbours/Neighbour" instance=ExtResource("11_xdpe8")]
+to_scene = ExtResource("10_j2qjn")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="DayNightManager"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Neighbours/Neighbour/TPZone"]
+shape = SubResource("CircleShape2D_j2qjn")
+
+[node name="DayNightManager" type="CanvasModulate" parent="."]
 script = ExtResource("10_8cs87")
 gradient = ExtResource("11_p8evq")
 

@@ -32,14 +32,5 @@ func switch_to(scene_path: String, scene_key: String) -> void:
 	add_child(current_scene)
 	animation_player.play_backwards("dissolve")
 	
-func switch_world() -> void:
-	if world == "neighbourhood":
-		world = "dream"
-		switch_to(DREAM_PATH, "DreamWorld")
-	else:
-		world = "neighbourhood"
-		switch_to(NEIGHBOURHOOD_PATH, "Neighbourhood")
-		
-
 func initialize() -> void:
 	switch_to(NEIGHBOURHOOD_PATH, "Neighbourhood")

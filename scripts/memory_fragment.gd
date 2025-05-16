@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		label.visible = false
 	
 	if player_in_area and Input.is_action_just_pressed("interact"):
-		state_manager.switch_world()
+		state_manager.switch_to("res://scenes/neighbourhood.tscn", "Neighbourhood")
 		queue_free()
 
 func _on_body_entered(body: CharacterBody2D) -> void:

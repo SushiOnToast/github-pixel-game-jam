@@ -37,12 +37,7 @@ func _process(delta: float) -> void:
 			await get_tree().process_frame
 
 		had_interaction = true
-		num_interactions += 1
 		is_talking = false
-
-	elif night and player_in_area and Input.is_action_just_pressed("interact") and num_interactions == 1:
-		num_interactions += 1
-		state_manager.switch_world()
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	player_in_area = true

@@ -1,6 +1,8 @@
 extends CanvasModulate
 
-@onready var neighbours: Node = $"../../Neighbours"
+class_name DayNightManager
+
+@onready var neighbours: Node = $"../Neighbours"
 
 const CYCLE_DURATION = PI/2  # One full sine wave cycle
 
@@ -12,25 +14,19 @@ var time: float = 0.0
 var cycle_finished: bool = false
 
 func _process(delta: float) -> void:
-	if cycle_finished:
-		return
-		
-	#if not done_checked and _all_neighbours_interacted():
-		#print("done")
-		#done_checked = true
+	if not cycle_finished:
+		var value = (sin(time - (PI / 2)) + 1.0)
+		self.color = gradient.gradient.sample(value)
 		
 	var all_interaction = _all_neighbours_interacted()
 	
 	time += delta / cycle_speed
 	
-	var value = (sin(time - (PI / 2)) + 1.0)
-	self.color = gradient.gradient.sample(value)
-	
 	if time >= CYCLE_DURATION:
 		cycle_finished = true
-		is_night = true	
 	
 	if all_interaction:
+		is_night = true	
 		self.color = Color("#1e2237")
 		
 #func _all_neighbours_interacted():
