@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=46 format=4 uid="uid://b5loh0re42lpl"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_wal8v"]
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3532l2xhdw36" path="res://assets/graphics/tilesets/exteriors/3_City_Props_16x16.png" id="5_3em0a"]
 [ext_resource type="PackedScene" uid="uid://dyiqvy26en0q6" path="res://scenes/neighbour.tscn" id="5_78gjo"]
 [ext_resource type="Texture2D" uid="uid://qk3dpv8yv6pj" path="res://assets/graphics/characters/Amelia_idle_anim_16x16.png" id="7_lp2ac"]
+[ext_resource type="Resource" uid="uid://dahhhef7qchqh" path="res://dialogue/conversations/NPC1.dialogue" id="8_hsmw3"]
 [ext_resource type="Script" uid="uid://cpyfl3h8rsqoy" path="res://scripts/day_night_canvas.gd" id="10_8cs87"]
 [ext_resource type="PackedScene" uid="uid://don5osiihhgog" path="res://scenes/dreams/dream1.tscn" id="10_j2qjn"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
@@ -18607,6 +18608,7 @@ position_smoothing_enabled = true
 
 [node name="Neighbour" parent="Neighbours" instance=ExtResource("5_78gjo")]
 position = Vector2(-57, 38)
+conversation_file = ExtResource("8_hsmw3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Neighbours/Neighbour"]
 z_index = 2

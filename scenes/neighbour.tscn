@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyiqvy26en0q6"]
+[gd_scene load_steps=6 format=3 uid="uid://dyiqvy26en0q6"]
 
+[ext_resource type="Script" uid="uid://dqelhedfa4t8u" path="res://scripts/neighbour.gd" id="1_7llwv"]
 [ext_resource type="Script" uid="uid://d2c45o7xo28na" path="res://scripts/neighbour_area2d.gd" id="1_dehqy"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="2_5mroy"]
 [ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="2_edyne"]
@@ -10,6 +11,7 @@ radius = 16.0
 [node name="Neighbour" type="CharacterBody2D"]
 z_index = 2
 y_sort_enabled = true
+script = ExtResource("1_7llwv")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_dehqy")

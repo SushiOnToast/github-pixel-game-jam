@@ -6,10 +6,13 @@ var balloon_scene = preload("res://dialogue/dialogue_balloon.tscn")
 @onready var state_manager: StateManager
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
+@onready var neighbour: NeighbourBody = $".."
 
 var player_in_area = false
 var num_interactions = 0
 var is_talking := false
+
+var convo_path
 
 @export var had_interaction = false
 @export var night = false
@@ -18,6 +21,7 @@ func _ready() -> void:
 	texture_rect.visible = false
 	label.visible = false
 	state_manager = get_tree().get_root().find_child("StateManager", true, false)
+	convo_path = neighbour.return_convo_path()
 	
 func _process(delta: float) -> void:
 	if player_in_area and not had_interaction or player_in_area and night and num_interactions == 1:
@@ -31,7 +35,7 @@ func _process(delta: float) -> void:
 		is_talking = true
 		var balloon: BaseDialogueBalloon = balloon_scene.instantiate()
 		get_tree().current_scene.add_child(balloon)
-		balloon.start(load("res://dialogue/conversations/NPC1.dialogue"), "start")
+		balloon.start(load(convo_path), "start")
 
 		while is_instance_valid(balloon) and balloon.get_parent() != null:
 			await get_tree().process_frame
