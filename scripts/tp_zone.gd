@@ -32,15 +32,22 @@ func _ready() -> void:
 		to_scene_key = "Neighbourhood"
 	
 func _process(delta: float) -> void:
-	if day_night_manager.is_night:
+	if !parent_name.begins_with("House"):
+		if day_night_manager.is_night:
+			if player_in_area and Input.is_action_just_pressed("interact"):	
+				state_manager.switch_to(to_scene_path, to_scene_key)
+							
+			texture_rect.visible = player_in_area
+			label.visible = player_in_area
+		else:
+			texture_rect.visible = false
+			label.visible = false
+	else:
 		if player_in_area and Input.is_action_just_pressed("interact"):	
 			state_manager.switch_to(to_scene_path, to_scene_key)
-						
+							
 		texture_rect.visible = player_in_area
 		label.visible = player_in_area
-	else:
-		texture_rect.visible = false
-		label.visible = false
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	player_in_area = true
