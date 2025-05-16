@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bu0x2hvdv1o88"]
+
+[ext_resource type="Texture2D" uid="uid://c70dpmq3okey" path="res://assets/graphics/UI/dialogue_option.png" id="1_1d7so"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d7so"]
+atlas = ExtResource("1_1d7so")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ciduh"]
+texture = SubResource("AtlasTexture_1d7so")
+texture_margin_top = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(1, 1, 1, 0.541176)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77nev"]
+texture = ExtResource("1_1d7so")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_ciduh")
+Button/styles/normal = SubResource("StyleBoxTexture_77nev")

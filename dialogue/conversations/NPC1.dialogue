@@ -2,11 +2,6 @@
 Amelia: [[Hi|Hello|Howdy]], this is some dialogue.
 You: Hello!
 Amelia: Here are some choices.
-- First one
-	Amelia: You picked the first one.
-- Second one
-	Amelia: You picked the second one.
-- Start again => start
 - End the conversation => END
 Amelia: See you again some time!
 => END
