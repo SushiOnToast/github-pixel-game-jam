@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://don5osiihhgog"]
 
 [ext_resource type="Texture2D" uid="uid://bj6bkesaf102d" path="res://assets/graphics/platformer/Terrain (16x16).png" id="1_w4maq"]
-[ext_resource type="Texture2D" uid="uid://b4wfcteokgddq" path="res://scenes/dreams/t.png" id="2_7e330"]
+[ext_resource type="Texture2D" uid="uid://t03hlurtgrpa" path="res://scenes/dreams/terainful.png" id="2_7e330"]
 [ext_resource type="PackedScene" uid="uid://dyphhhwl1ht4d" path="res://scenes/dream_world.tscn" id="2_jh2mb"]
 [ext_resource type="PackedScene" uid="uid://206m4cggween" path="res://scenes/memory_fragment.tscn" id="3_7e330"]
 
@@ -252,6 +252,8 @@ texture = ExtResource("2_7e330")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -260,7 +262,7 @@ texture = ExtResource("2_7e330")
 2:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_416i6"]
-sources/2 = SubResource("TileSetAtlasSource_iix28")
+sources/5 = SubResource("TileSetAtlasSource_iix28")
 
 [node name="Dream1" type="Node2D"]
 
@@ -275,7 +277,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAAHAAEAAAADAAAAAAAKAAEAAAACAAEAAAAHAAE
 tile_set = SubResource("TileSet_pkmuv")
 
 [node name="test" type="TileMapLayer" parent="Map"]
-tile_map_data = PackedByteArray("AAD8//X/AgAAAAAAAAD9//X/AgABAAAAAAD+//X/AgABAAAAAAD///X/AgABAAAAAAAAAPX/AgABAAAAAAABAPX/AgACAAAAAAD8//b/AgAAAAEAAAD8//f/AgAAAAEAAAD7//j/AgACAAAAAAD6//j/AgABAAAAAAD5//j/AgABAAAAAAD4//j/AgAAAAAAAAD4//n/AgAAAAEAAAD4//r/AgAAAAIAAAD5//r/AgABAAIAAAD6//r/AgABAAIAAAD7//r/AgACAAIAAAD8//r/AgAAAAIAAAD9//r/AgABAAIAAAD+//r/AgABAAIAAAD///r/AgACAAIAAAD///n/AgACAAEAAAAAAPj/AgABAAIAAAABAPj/AgACAAIAAAABAPf/AgACAAEAAAABAPb/AgACAAEAAAAAAPb/AgABAAEAAAD///b/AgABAAEAAAD+//b/AgABAAEAAAD9//b/AgABAAEAAAD9//f/AgABAAEAAAD+//f/AgABAAEAAAD///f/AgABAAEAAAAAAPf/AgABAAEAAAD9//j/AgABAAEAAAD+//j/AgABAAEAAAD///j/AgABAAEAAAD7//n/AgACAAEAAAD5//n/AgABAAEAAAD6//n/AgABAAEAAAD8//j/AgAAAAEAAAD8//n/AgAAAAEAAAD9//n/AgABAAEAAAD+//n/AgABAAEAAAA=")
+tile_map_data = PackedByteArray("AAD4//j/BQAAAAAAAAD5//j/BQABAAAAAAD6//j/BQABAAAAAAD8//j/BQAFAAAAAAD7//j/BQABAAAAAAD8//f/BQAAAAEAAAD9//f/BQABAAEAAAD+//f/BQABAAEAAAD///f/BQABAAEAAAAAAPf/BQABAAEAAAABAPf/BQACAAEAAAD8//X/BQAAAAAAAAD9//X/BQABAAAAAAD+//X/BQABAAAAAAD///X/BQABAAAAAAAAAPX/BQABAAAAAAABAPX/BQACAAAAAAD8//b/BQAAAAEAAAD9//b/BQABAAEAAAD+//b/BQABAAEAAAD///b/BQABAAEAAAAAAPb/BQABAAEAAAABAPb/BQACAAEAAAD9//j/BQABAAEAAAD+//j/BQABAAEAAAD///j/BQABAAEAAAAAAPj/BQABAAIAAAABAPj/BQACAAIAAAD4//n/BQAAAAEAAAD5//n/BQABAAEAAAD6//n/BQABAAEAAAD7//n/BQABAAEAAAD8//n/BQABAAEAAAD9//n/BQABAAEAAAD+//n/BQABAAEAAAD///n/BQACAAEAAAD4//r/BQAAAAIAAAD5//r/BQABAAIAAAD6//r/BQABAAIAAAD7//r/BQABAAIAAAD8//r/BQABAAIAAAD9//r/BQABAAIAAAD+//r/BQABAAIAAAD///r/BQACAAIAAAA=")
 tile_set = SubResource("TileSet_416i6")
 
 [node name="DreamWorld" parent="." instance=ExtResource("2_jh2mb")]

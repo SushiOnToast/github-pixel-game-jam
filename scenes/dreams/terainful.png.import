@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4wfcteokgddq"
-path="res://.godot/imported/t.png-28d70191ea6486df24880d25d237714a.ctex"
+uid="uid://t03hlurtgrpa"
+path="res://.godot/imported/terainful.png-10d48b4839a6e316312ffb35bdcef5ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/dreams/t.png"
-dest_files=["res://.godot/imported/t.png-28d70191ea6486df24880d25d237714a.ctex"]
+source_file="res://scenes/dreams/terainful.png"
+dest_files=["res://.godot/imported/terainful.png-10d48b4839a6e316312ffb35bdcef5ca.ctex"]
 
 [params]
 
