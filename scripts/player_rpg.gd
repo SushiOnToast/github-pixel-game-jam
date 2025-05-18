@@ -6,6 +6,18 @@ var status = "down_idle"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var control_prompt: TextureRect = $ControlPrompt
 @onready var state_manager: StateManager = get_tree().get_root().find_child("StateManager", true, false)
+@onready var day_night_manager: DayNightManager = get_tree().get_root().find_child("DayNightManager", true, false)
+
+var reset_night = false
+var start_position: Vector2
+
+func _ready() -> void:
+	start_position = position  # Save initial spawn position
+
+func _process(delta: float) -> void:
+	if day_night_manager.is_night and not reset_night:
+		reset_night = true
+		position = start_position
 
 func _physics_process(delta: float) -> void:
 	if state_manager.dialogue:

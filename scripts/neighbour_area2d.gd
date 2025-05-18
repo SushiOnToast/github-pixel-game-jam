@@ -24,6 +24,9 @@ func _ready() -> void:
 	type = neighbour.NPC_type
 
 func _process(delta: float) -> void:
+	if night and type != "bones":
+		neighbour.should_clear = true
+	
 	_update_interaction_ui()
 
 	if _can_start_conversation():
