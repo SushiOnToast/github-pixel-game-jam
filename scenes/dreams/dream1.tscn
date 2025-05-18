@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://don5osiihhgog"]
 
 [ext_resource type="Texture2D" uid="uid://bj6bkesaf102d" path="res://assets/graphics/platformer/Terrain (16x16).png" id="1_w4maq"]
-[ext_resource type="Texture2D" uid="uid://t03hlurtgrpa" path="res://scenes/dreams/terainful.png" id="2_7e330"]
+[ext_resource type="Texture2D" uid="uid://t03hlurtgrpa" path="res://assets/graphics/platformer/blueterrain.png" id="2_7e330"]
 [ext_resource type="PackedScene" uid="uid://dyphhhwl1ht4d" path="res://scenes/dream_world.tscn" id="2_jh2mb"]
 [ext_resource type="PackedScene" uid="uid://206m4cggween" path="res://scenes/memory_fragment.tscn" id="3_7e330"]
 
@@ -277,7 +277,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAAHAAEAAAADAAAAAAAKAAEAAAACAAEAAAAHAAE
 tile_set = SubResource("TileSet_pkmuv")
 
 [node name="test" type="TileMapLayer" parent="Map"]
-tile_map_data = PackedByteArray("AAD4//j/BQAAAAAAAAD5//j/BQABAAAAAAD6//j/BQABAAAAAAD8//j/BQAFAAAAAAD7//j/BQABAAAAAAD8//f/BQAAAAEAAAD9//f/BQABAAEAAAD+//f/BQABAAEAAAD///f/BQABAAEAAAAAAPf/BQABAAEAAAABAPf/BQACAAEAAAD8//X/BQAAAAAAAAD9//X/BQABAAAAAAD+//X/BQABAAAAAAD///X/BQABAAAAAAAAAPX/BQABAAAAAAABAPX/BQACAAAAAAD8//b/BQAAAAEAAAD9//b/BQABAAEAAAD+//b/BQABAAEAAAD///b/BQABAAEAAAAAAPb/BQABAAEAAAABAPb/BQACAAEAAAD9//j/BQABAAEAAAD+//j/BQABAAEAAAD///j/BQABAAEAAAAAAPj/BQABAAIAAAABAPj/BQACAAIAAAD4//n/BQAAAAEAAAD5//n/BQABAAEAAAD6//n/BQABAAEAAAD7//n/BQABAAEAAAD8//n/BQABAAEAAAD9//n/BQABAAEAAAD+//n/BQABAAEAAAD///n/BQACAAEAAAD4//r/BQAAAAIAAAD5//r/BQABAAIAAAD6//r/BQABAAIAAAD7//r/BQABAAIAAAD8//r/BQABAAIAAAD9//r/BQABAAIAAAD+//r/BQABAAIAAAD///r/BQACAAIAAAA=")
+tile_map_data = PackedByteArray("AAD4//r/BQAAAAIAAAD5//r/BQABAAIAAAD6//r/BQABAAIAAAD7//r/BQABAAIAAAD8//r/BQABAAIAAAD9//r/BQABAAIAAAD+//r/BQABAAIAAAD///r/BQACAAIAAAD4//j/BQAAAAAAAAD4//n/BQAAAAEAAAD5//j/BQABAAAAAAD5//n/BQABAAEAAAD6//j/BQABAAAAAAD6//n/BQABAAEAAAD7//j/BQABAAAAAAD7//n/BQABAAEAAAD8//X/BQAAAAAAAAD8//b/BQAAAAEAAAD8//f/BQAAAAEAAAD8//j/BQAFAAAAAAD8//n/BQABAAEAAAD9//X/BQABAAAAAAD9//b/BQABAAEAAAD9//f/BQABAAEAAAD9//j/BQABAAEAAAD9//n/BQABAAEAAAD+//X/BQABAAAAAAD+//b/BQABAAEAAAD+//f/BQABAAEAAAD+//j/BQABAAEAAAD+//n/BQABAAEAAAD///X/BQABAAAAAAD///b/BQABAAEAAAD///f/BQABAAEAAAD///j/BQABAAEAAAD///n/BQACAAEAAAAAAPX/BQABAAAAAAAAAPb/BQABAAEAAAAAAPf/BQABAAEAAAAAAPj/BQABAAIAAAABAPX/BQACAAAAAAABAPb/BQACAAEAAAABAPf/BQACAAEAAAABAPj/BQACAAIAAAA=")
 tile_set = SubResource("TileSet_416i6")
 
 [node name="DreamWorld" parent="." instance=ExtResource("2_jh2mb")]
