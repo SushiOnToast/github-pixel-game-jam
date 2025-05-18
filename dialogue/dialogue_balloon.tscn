@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=8 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" uid="uid://42eqkkgdthc6" path="res://dialogue/dialogue_balloon.gd" id="1_cl01r"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_3n8ca"]
 [ext_resource type="Theme" uid="uid://c0twxlcfsm0x" path="res://dialogue/dialogue_balloon_theme.tres" id="2_foubd"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="2_hbq6q"]
+[ext_resource type="FontFile" uid="uid://bbyfmunnflpii" path="res://assets/fonts/pixelify_sans/static/PixelifySans-Regular.ttf" id="3_1lo6v"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_hbq6q"]
 [ext_resource type="Theme" uid="uid://bu0x2hvdv1o88" path="res://dialogue/dialogue_option_theme.tres" id="6_1lo6v"]
 
@@ -56,10 +57,10 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
-theme_override_fonts/normal_font = ExtResource("2_hbq6q")
-theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_fonts/normal_font = ExtResource("3_1lo6v")
+theme_override_font_sizes/bold_italics_font_size = 19
 theme_override_font_sizes/italics_font_size = 1
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -69,8 +70,8 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("2_hbq6q")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_fonts/normal_font = ExtResource("3_1lo6v")
+theme_override_font_sizes/normal_font_size = 26
 text = "Dialogue..."
 
 [node name="Label" type="Label" parent="Balloon/Panel"]
