@@ -3,6 +3,7 @@ extends CanvasModulate
 class_name DayNightManager
 
 @onready var neighbours: Node = $"../Neighbours"
+@onready var state_manager: StateManager = get_tree().get_root().find_child("StateManager", true, false)
 
 const CYCLE_DURATION = PI/2 
 
@@ -12,6 +13,7 @@ const CYCLE_DURATION = PI/2
 
 var time: float = 0.0
 var cycle_finished: bool = false
+var animation_playing := false
 
 func _process(delta: float) -> void:
 	if not cycle_finished:
@@ -25,8 +27,15 @@ func _process(delta: float) -> void:
 	if time >= CYCLE_DURATION:
 		cycle_finished = true
 	
-	if all_interaction:
+	if all_interaction and not is_night:
+		animation_playing = true
 		is_night = true	
+		state_manager.animation_player.play("night_transition")
+		await state_manager.animation_player.animation_finished
+		animation_playing = false
+		state_manager.animation_player.play_backwards("night_transition")
+	
+	if is_night and not animation_playing:
 		self.color = Color("#1e2237")
 		
 #func _all_neighbours_interacted():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://5s2vnvwdh332"]
+[gd_scene load_steps=7 format=3 uid="uid://5s2vnvwdh332"]
 
 [ext_resource type="Script" uid="uid://4cu4omkgfsue" path="res://scripts/state_manager.gd" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://4bh0i6vxw4cd" path="res://scripts/game.gd" id="1_yqjtg"]
@@ -34,10 +34,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_yqjtg"]
+resource_name = "night_transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.996078)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5jenm"]
 _data = {
 &"RESET": SubResource("Animation_rki24"),
-&"dissolve": SubResource("Animation_ceu0u")
+&"dissolve": SubResource("Animation_ceu0u"),
+&"night_transition": SubResource("Animation_yqjtg")
 }
 
 [node name="Game" type="Node2D"]

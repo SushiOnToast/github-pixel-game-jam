@@ -5,6 +5,7 @@ var pulse_strength: float = 0.2
 var pulse_speed: float = 3.0
 var flicker_noise_strength: float = 0.05
 var flicker_noise_speed: float = 20.0
+var on := false
 
 var time := 0.0
 var parent_name: String
@@ -18,7 +19,11 @@ func _ready() -> void:
 
 func _process(delta):
 	if parent_name == "Neighbourhood":
-		if day_night_manager.is_night:
+		if day_night_manager.is_night and not on:
+			await get_tree().create_timer(1.0).timeout
+			show_light(delta)
+			on = true
+		elif day_night_manager.is_night and on:
 			show_light(delta)
 		else:
 			self.visible = false	
