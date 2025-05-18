@@ -430,5 +430,5 @@ y_sort_enabled = true
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_dls5h")
 animation = &"down"
-frame_progress = 0.226488
+frame_progress = 0.246782
 offset = Vector2(0, -15)
