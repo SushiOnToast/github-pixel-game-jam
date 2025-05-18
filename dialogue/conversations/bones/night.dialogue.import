@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://1lxvmbrhanvw"
+path="res://.godot/imported/night.dialogue-b1835eddbcb9bc0506873badc93fff9d.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/bones/night.dialogue"
+dest_files=["res://.godot/imported/night.dialogue-b1835eddbcb9bc0506873badc93fff9d.tres"]
+
+[params]
+
+defaults=true

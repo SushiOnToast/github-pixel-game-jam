@@ -14,6 +14,7 @@ var balloon_scene = preload("res://dialogue/dialogue_balloon.tscn")
 
 var convo_path
 var player_in_area := false
+var had_night_interaction := false
 var num_interactions := 0
 var is_talking := false
 
@@ -30,32 +31,50 @@ func _process(delta: float) -> void:
 		_start_conversation()
 
 func _update_interaction_ui() -> void:
-	var show_ui := player_in_area and (
-		(not had_interaction) or
-		(night and num_interactions == 1)
-	)
-	
+	var show_ui := false
+
+	if type == "bones":
+		show_ui = player_in_area and not is_talking
+	else:
+		show_ui = player_in_area and (
+			(not had_interaction) or
+			(night and num_interactions == 1)
+		)
+
 	texture_rect.visible = show_ui
 	label.visible = show_ui
 
 func _can_start_conversation() -> bool:
-	return (
-		player_in_area and
-		Input.is_action_just_pressed("interact") and
-		not had_interaction and
-		not night and
-		not is_talking
-	)
+	if not player_in_area or is_talking or not Input.is_action_just_pressed("interact"):
+		return false
+
+	if type == "bones":
+		return true  # Allow dialogue even at night or after interaction
+	else:
+		return not had_interaction and not night
 
 func _start_conversation() -> void:
 	is_talking = true
 	state_manager.dialogue = true
+	
+	if type == "bones":
+		if night:
+			if had_night_interaction:
+				convo_path = "res://dialogue/conversations/bones/night_post_interaction.dialogue"
+			else:	
+				convo_path = "res://dialogue/conversations/bones/night.dialogue"
+		else:
+			if had_interaction:
+				convo_path = "res://dialogue/conversations/bones/day_post_interaction.dialogue"
 
 	var balloon: BaseDialogueBalloon = balloon_scene.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(load(convo_path), "start")
 
 	await _wait_for_balloon_end(balloon)
+	
+	if night:
+		had_night_interaction = true
 
 	had_interaction = true
 	is_talking = false

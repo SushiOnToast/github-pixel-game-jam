@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://qk3dpv8yv6pj" path="res://assets/graphics/characters/Amelia_idle_anim_16x16.png" id="7_lp2ac"]
 [ext_resource type="Resource" uid="uid://dahhhef7qchqh" path="res://dialogue/conversations/NPC1.dialogue" id="8_hsmw3"]
 [ext_resource type="Script" uid="uid://cpyfl3h8rsqoy" path="res://scripts/day_night_canvas.gd" id="10_8cs87"]
-[ext_resource type="PackedScene" uid="uid://don5osiihhgog" path="res://scenes/dreams/dream1.tscn" id="10_j2qjn"]
+[ext_resource type="PackedScene" uid="uid://b21om77dw6euq" path="res://scenes/houses/house1.tscn" id="11_kcyb3"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="11_xdpe8"]
 [ext_resource type="Texture2D" uid="uid://bb16ewnlmpvai" path="res://assets/graphics/characters/Modern_Exteriors_Characters_Skeleton_1_16x16.png" id="12_hsmw3"]
@@ -19020,7 +19020,7 @@ autoplay = "default"
 frame_progress = 0.167988
 
 [node name="TPZone" parent="Neighbours/Neighbour" instance=ExtResource("11_xdpe8")]
-to_scene = ExtResource("10_j2qjn")
+to_scene = ExtResource("11_kcyb3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Neighbours/Neighbour/TPZone"]
 shape = SubResource("CircleShape2D_j2qjn")

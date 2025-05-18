@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bla808lkryysi"
+path="res://.godot/imported/night_post_interaction.dialogue-b80a2bbba2fab09e7335ade371ba37bf.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/bones/night_post_interaction.dialogue"
+dest_files=["res://.godot/imported/night_post_interaction.dialogue-b80a2bbba2fab09e7335ade371ba37bf.tres"]
+
+[params]
+
+defaults=true

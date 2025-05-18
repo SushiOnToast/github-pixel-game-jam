@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://b61llwa74vcs"]
+[gd_scene load_steps=13 format=4 uid="uid://b21om77dw6euq"]
 
 [ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_tvcit"]
 [ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_o7yrq"]
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="3_hbjst"]
-[ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="5_hbjst"]
-[ext_resource type="PackedScene" uid="uid://b61llwa74vcs" path="res://scenes/houses/house1.tscn" id="6_aph84"]
-[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="6_ej7u6"]
+[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="4_aph84"]
+[ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="5_ej7u6"]
+[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="6_gufhm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
 texture = ExtResource("1_tvcit")
@@ -2513,6 +2513,15 @@ size = Vector2(29, 20)
 [node name="House1" type="Node2D"]
 visible = false
 
+[node name="PlayerRPG" parent="." instance=ExtResource("3_hbjst")]
+position = Vector2(114, 11)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="BaseHouse" parent="." instance=ExtResource("4_aph84")]
+
 [node name="Tiles" type="Node" parent="."]
 
 [node name="floor" type="TileMapLayer" parent="Tiles"]
@@ -2550,18 +2559,9 @@ z_index = 2
 tile_map_data = PackedByteArray("AAATAP//AAALAAwAAAATAAAAAAALAA0AAAA=")
 tile_set = SubResource("TileSet_se78b")
 
-[node name="PlayerRPG" parent="." instance=ExtResource("3_hbjst")]
-position = Vector2(114, 11)
-
-[node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
-[node name="BaseHouse" parent="." instance=ExtResource("6_aph84")]
-
-[node name="TPZone" parent="." instance=ExtResource("5_hbjst")]
+[node name="TPZone" parent="." instance=ExtResource("5_ej7u6")]
 position = Vector2(160, 36)
-to_scene = ExtResource("6_ej7u6")
+to_scene = ExtResource("6_gufhm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
 position = Vector2(0.5, 0)
