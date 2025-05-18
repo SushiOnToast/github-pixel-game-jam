@@ -15,7 +15,6 @@ var balloon_scene = preload("res://dialogue/dialogue_balloon.tscn")
 var convo_path
 var player_in_area := false
 var had_night_interaction := false
-var num_interactions := 0
 var is_talking := false
 
 func _ready() -> void:
@@ -36,10 +35,7 @@ func _update_interaction_ui() -> void:
 	if type == "bones":
 		show_ui = player_in_area and not is_talking
 	else:
-		show_ui = player_in_area and (
-			(not had_interaction) or
-			(night and num_interactions == 1)
-		)
+		show_ui = player_in_area and not night
 
 	texture_rect.visible = show_ui
 	label.visible = show_ui
@@ -51,7 +47,7 @@ func _can_start_conversation() -> bool:
 	if type == "bones":
 		return true  # Allow dialogue even at night or after interaction
 	else:
-		return not had_interaction and not night
+		return not night
 
 func _start_conversation() -> void:
 	is_talking = true

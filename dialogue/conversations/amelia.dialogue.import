@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bvu1yfwoh2353"
+path="res://.godot/imported/amelia.dialogue-2b1095fdddd73a42b0466cf3dc713719.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/amelia.dialogue"
+dest_files=["res://.godot/imported/amelia.dialogue-2b1095fdddd73a42b0466cf3dc713719.tres"]
+
+[params]
+
+defaults=true

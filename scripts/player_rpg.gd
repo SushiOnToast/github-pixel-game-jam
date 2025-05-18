@@ -11,7 +11,6 @@ func _physics_process(delta: float) -> void:
 	if state_manager.dialogue:
 		# Disable movement and force down_idle animation during dialogue
 		control_prompt.visible = false
-		status = "down_idle"
 		animated_sprite.play(status)
 		return
 	

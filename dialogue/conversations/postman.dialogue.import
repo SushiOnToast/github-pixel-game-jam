@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d3qbm2dbihulh"
+path="res://.godot/imported/postman.dialogue-6f736c7582e71f05e745bb9131f61fe4.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/postman.dialogue"
+dest_files=["res://.godot/imported/postman.dialogue-6f736c7582e71f05e745bb9131f61fe4.tres"]
+
+[params]
+
+defaults=true

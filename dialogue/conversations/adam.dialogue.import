@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvhnub53oqtvd"
+path="res://.godot/imported/adam.dialogue-eea86919b7d8c70613828cc7005b631c.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/adam.dialogue"
+dest_files=["res://.godot/imported/adam.dialogue-eea86919b7d8c70613828cc7005b631c.tres"]
+
+[params]
+
+defaults=true

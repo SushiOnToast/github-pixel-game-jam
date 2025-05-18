@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://csa5na1mgb4nq"
+path="res://.godot/imported/scout1.dialogue-0c16836f3849eae7785599eb1ebaed58.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/scout1.dialogue"
+dest_files=["res://.godot/imported/scout1.dialogue-0c16836f3849eae7785599eb1ebaed58.tres"]
+
+[params]
+
+defaults=true

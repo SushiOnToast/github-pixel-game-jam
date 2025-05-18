@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dyu34ikqiw25h"
+path="res://.godot/imported/alex.dialogue-0c5dba6ea74c9465cb0896c94f0f132d.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/alex.dialogue"
+dest_files=["res://.godot/imported/alex.dialogue-0c5dba6ea74c9465cb0896c94f0f132d.tres"]
+
+[params]
+
+defaults=true
