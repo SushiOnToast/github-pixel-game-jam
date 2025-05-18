@@ -14,6 +14,8 @@ const DREAM_PATH = "res://scenes/dream_world.tscn"
 var current_scene: Node2D = null
 var saved_scenes: Dictionary = {}
 
+var dialogue: bool
+
 func switch_to(scene_path: String, scene_key: String) -> void:
 	animation_player.play("dissolve")
 	await animation_player.animation_finished

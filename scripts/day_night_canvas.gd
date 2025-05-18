@@ -33,7 +33,11 @@ func _process(delta: float) -> void:
 func _all_neighbours_interacted() -> bool:
 	for child in neighbours.get_children():
 		var c = child.get_children()[0]
-		if c == null or not c.had_interaction:
+		if c == null:
+			continue
+		if c.type == "bones":
+			continue
+		if not c.had_interaction:
 			return false
 	_set_all_night()
 	return true

@@ -1,6 +1,5 @@
-[gd_scene load_steps=46 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=54 format=4 uid="uid://b5loh0re42lpl"]
 
-[ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_wal8v"]
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
 [ext_resource type="Texture2D" uid="uid://nkic0c38n2p" path="res://assets/graphics/tilesets/exteriors/19_Graveyard_16x16.png" id="2_nq1h2"]
 [ext_resource type="Texture2D" uid="uid://d25uoyoaddj40" path="res://assets/graphics/tilesets/exteriors/7_Villas_16x16.png" id="3_21ppa"]
@@ -13,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://don5osiihhgog" path="res://scenes/dreams/dream1.tscn" id="10_j2qjn"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="11_xdpe8"]
-[ext_resource type="PackedScene" uid="uid://b61llwa74vcs" path="res://scenes/houses/house1.tscn" id="14_hsmw3"]
+[ext_resource type="Texture2D" uid="uid://bb16ewnlmpvai" path="res://assets/graphics/characters/Modern_Exteriors_Characters_Skeleton_1_16x16.png" id="12_hsmw3"]
+[ext_resource type="Resource" uid="uid://trv0rxdavwa2" path="res://dialogue/conversations/bones/day.dialogue" id="12_kcyb3"]
+[ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="14_hsmw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
 texture = ExtResource("2_nq1h2")
@@ -18776,6 +18777,56 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2qjn"]
 radius = 16.1245
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5uu"]
+atlas = ExtResource("12_hsmw3")
+region = Rect2(288, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy4h1"]
+atlas = ExtResource("12_hsmw3")
+region = Rect2(304, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmpvp"]
+atlas = ExtResource("12_hsmw3")
+region = Rect2(320, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iswku"]
+atlas = ExtResource("12_hsmw3")
+region = Rect2(336, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgikh"]
+atlas = ExtResource("12_hsmw3")
+region = Rect2(352, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwlkt"]
+atlas = ExtResource("12_hsmw3")
+region = Rect2(368, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ck4wj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy4h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmpvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iswku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgikh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwlkt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2qjn"]
 size = Vector2(9.5, 11)
 
@@ -18947,8 +18998,8 @@ position = Vector2(0, 16)
 tile_map_data = PackedByteArray("AABPAP7/AAAZAB0AAABPAP//AAAZAB4AAABPAAAAAAAZAB8AAABQAP7/AAAaAB0AAABQAP//AAAaAB4AAABQAAAAAAAaAB8AAABRAP7/AAAbAB0AAABRAP//AAAbAB4AAABRAAAAAAAbAB8AAABSAP7/AAAcAB0AAABSAP//AAAcAB4AAABSAAAAAAAcAB8AAABdAAIAAAAWACQAAABdAAMAAAAWACUAAABeAAIAAAAXACQAAABeAAMAAAAXACUAAABJAP//AAAYACUAAABJAAAAAAAZACUAAABaAAIAAAAZACUAAABaAAMAAAAZACUAAABTAPz/AAATACcAAABUAPz/AAAUACcAAABQAAIAAAAVACcAAABVAAQAAAAVACYAAAA=")
 tile_set = SubResource("TileSet_cmpvp")
 
-[node name="PlayerRPG" parent="." instance=ExtResource("1_wal8v")]
-position = Vector2(66, -52)
+[node name="PlayerRPG" parent="." instance=ExtResource("14_hsmw3")]
+position = Vector2(15, -3)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
 zoom = Vector2(4, 4)
@@ -18957,7 +19008,7 @@ position_smoothing_enabled = true
 [node name="Neighbours" type="Node" parent="."]
 
 [node name="Neighbour" parent="Neighbours" instance=ExtResource("5_78gjo")]
-position = Vector2(-57, 38)
+position = Vector2(500, -12)
 conversation_file = ExtResource("8_hsmw3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Neighbours/Neighbour"]
@@ -18973,6 +19024,17 @@ to_scene = ExtResource("10_j2qjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Neighbours/Neighbour/TPZone"]
 shape = SubResource("CircleShape2D_j2qjn")
+
+[node name="Bones" parent="Neighbours" instance=ExtResource("5_78gjo")]
+position = Vector2(45, 63)
+conversation_file = ExtResource("12_kcyb3")
+NPC_type = "bones"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Neighbours/Bones"]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_ck4wj")
+autoplay = "default"
+frame_progress = 0.119269
 
 [node name="DayNightManager" type="CanvasModulate" parent="."]
 script = ExtResource("10_8cs87")

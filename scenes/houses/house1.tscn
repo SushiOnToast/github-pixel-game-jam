@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_o7yrq"]
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="3_hbjst"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="5_hbjst"]
-[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="6_aph84"]
+[ext_resource type="PackedScene" uid="uid://b61llwa74vcs" path="res://scenes/houses/house1.tscn" id="6_aph84"]
 [ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="6_ej7u6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]

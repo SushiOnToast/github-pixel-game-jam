@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://trv0rxdavwa2"
+path="res://.godot/imported/day.dialogue-a2b784e812c6339ddcdd3c0a6817f469.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/bones/day.dialogue"
+dest_files=["res://.godot/imported/day.dialogue-a2b784e812c6339ddcdd3c0a6817f469.tres"]
+
+[params]
+
+defaults=true

@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name NeighbourBody
 
 @export var conversation_file: Resource
+@export var NPC_type: String = ""
 
 func return_convo_path():
 	if conversation_file:
