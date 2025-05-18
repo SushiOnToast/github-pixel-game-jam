@@ -2510,7 +2510,7 @@ sources/0 = SubResource("TileSetAtlasSource_rk7hg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aph84"]
 size = Vector2(29, 20)
 
-[node name="House1" type="Node2D"]
+[node name="House2" type="Node2D"]
 visible = false
 
 [node name="Tiles" type="Node" parent="."]

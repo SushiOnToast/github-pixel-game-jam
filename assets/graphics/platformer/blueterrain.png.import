@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://t03hlurtgrpa"
-path="res://.godot/imported/terainful.png-10d48b4839a6e316312ffb35bdcef5ca.ctex"
+path="res://.godot/imported/blueterrain.png-c1242e10e374c043067a34442f7c65e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/dreams/terainful.png"
-dest_files=["res://.godot/imported/terainful.png-10d48b4839a6e316312ffb35bdcef5ca.ctex"]
+source_file="res://assets/graphics/platformer/blueterrain.png"
+dest_files=["res://.godot/imported/blueterrain.png-c1242e10e374c043067a34442f7c65e1.ctex"]
 
 [params]
 

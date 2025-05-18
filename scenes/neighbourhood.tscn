@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://don5osiihhgog" path="res://scenes/dreams/dream1.tscn" id="10_j2qjn"]
 [ext_resource type="Texture2D" uid="uid://dg2rjns2ntih8" path="res://assets/graphics/daynightcycle-gradient-texture.tres" id="11_p8evq"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="11_xdpe8"]
-[ext_resource type="PackedScene" uid="uid://b61llwa74vcs" path="res://scenes/houses/house1.tscn" id="14_hsmw3"]
+[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="14_hsmw3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
 texture = ExtResource("2_nq1h2")
