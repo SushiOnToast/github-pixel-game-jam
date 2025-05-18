@@ -7,7 +7,7 @@ class_name DayNightManager
 const CYCLE_DURATION = PI/2  # One full sine wave cycle
 
 @export var gradient: GradientTexture1D
-@export var cycle_speed: float = 100.0 # Adjust this to make it slower/faster
+@export var cycle_speed: float = 120.0 # Adjust this to make it slower/faster
 @export var is_night = false
 
 var time: float = 0.0
