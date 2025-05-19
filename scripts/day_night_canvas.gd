@@ -38,6 +38,11 @@ func _process(delta: float) -> void:
 	if is_night and not animation_playing:
 		self.color = Color("#1e2237")
 		
+	if Input.is_action_just_pressed("switch world"):
+		is_night = true
+		all_interaction = true
+		_set_all_night()
+		
 #func _all_neighbours_interacted():
 func _all_neighbours_interacted() -> bool:
 	for child in neighbours.get_children():

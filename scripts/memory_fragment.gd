@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name MemoryFragment
+
 @onready var state_manager: StateManager
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
@@ -20,6 +22,7 @@ func _process(delta: float) -> void:
 		label.visible = false
 	
 	if player_in_area and Input.is_action_just_pressed("interact"):
+		state_manager.collected_fragments[get_parent().name.to_lower()] = true
 		state_manager.switch_to("res://scenes/neighbourhood.tscn", "Neighbourhood")
 		queue_free()
 

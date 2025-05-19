@@ -11,7 +11,8 @@ var world := "neighbourhood"
 const NEIGHBOURHOOD_PATH = "res://scenes/neighbourhood.tscn"
 const START_MENU_PATH = "res://scenes/start_menu.tscn"
 const PAUSE_MENU_PATH = "res://scenes/pause_menu.tscn"
- 
+
+var collected_fragments: Dictionary = {}
 
 var prev_scene: Node = null
 var prev_scene_path: String = ""

@@ -10,6 +10,7 @@ func _ready() -> void:
 	state_manager.show_menu()
 	
 #func _process(delta: float) -> void:
+	#print(state_manager.collected_fragments)
 	#if Input.is_action_just_pressed("pause"):
 		#pause()
 		#
