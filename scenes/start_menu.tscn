@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://b682bf1s4b2vs"]
+
+[ext_resource type="Script" uid="uid://bfq0gkywuuqri" path="res://scripts/start_menu.gd" id="1_m7x51"]
+[ext_resource type="Script" uid="uid://cnnjfct8fbddw" path="res://scripts/menu.gd" id="1_thu50"]
+[ext_resource type="Texture2D" uid="uid://bauau1frdekq7" path="res://assets/graphics/UI/start_menu_bg.png" id="2_fcv5n"]
+[ext_resource type="Texture2D" uid="uid://dj15gq2x8663q" path="res://assets/graphics/UI/selection_arrow.png" id="2_m7x51"]
+[ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="4_4v6gu"]
+[ext_resource type="FontFile" uid="uid://dr1btho4uwfxr" path="res://assets/fonts/yoster/yoster.ttf" id="6_4v6gu"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7x51")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -49.0
+offset_right = 1152.0
+offset_bottom = 719.0
+texture = ExtResource("2_fcv5n")
+
+[node name="Menu" type="VBoxContainer" parent="." node_paths=PackedStringArray("pointer")]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 450.0
+offset_right = 1101.0
+offset_bottom = 534.0
+script = ExtResource("1_thu50")
+pointer = NodePath("../SelectionArrow")
+metadata/_custom_type_script = "uid://cnnjfct8fbddw"
+
+[node name="Start" type="Label" parent="Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_4v6gu")
+theme_override_font_sizes/font_size = 40
+text = "Start"
+horizontal_alignment = 2
+
+[node name="Quit" type="Label" parent="Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_4v6gu")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+horizontal_alignment = 2
+
+[node name="SelectionArrow" type="Sprite2D" parent="."]
+position = Vector2(943, 466)
+scale = Vector2(3.5858, 3.70833)
+texture = ExtResource("2_m7x51")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 48.0
+offset_right = 1102.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("6_4v6gu")
+theme_override_font_sizes/font_size = 124
+text = "Until I Know"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Guide" type="Label" parent="."]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 391.0
+offset_right = 1099.0
+offset_bottom = 426.0
+theme_override_fonts/font = ExtResource("4_4v6gu")
+theme_override_font_sizes/font_size = 16
+text = "Up and Down Arrows to Navigate
+Space to Select"
+horizontal_alignment = 2
+
+[connection signal="actioned" from="Menu" to="." method="_on_menu_actioned"]

@@ -9,6 +9,7 @@ var should_clear := false
 func _process(delta: float) -> void:
 	if should_clear:
 		await get_tree().create_timer(1.0).timeout
+		
 		queue_free()
 
 func return_convo_path():
