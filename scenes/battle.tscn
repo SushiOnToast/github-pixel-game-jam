@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://cv13rl06hipar"]
+[gd_scene load_steps=24 format=3 uid="uid://cv13rl06hipar"]
 
 [ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://dpsnkcci5wv88" path="res://scripts/battle.gd" id="1_th188"]
-[ext_resource type="Resource" uid="uid://brprxvufndy45" path="res://enemies/dragon.tres" id="2_p1qf1"]
+[ext_resource type="Resource" uid="uid://buakt7a3sums8" path="res://enemies/test_enemy.tres" id="2_6vh42"]
 [ext_resource type="Texture2D" uid="uid://blknmg5f5r3rj" path="res://assets/graphics/fight/fightanimate.png" id="4_lpir7"]
 [ext_resource type="Texture2D" uid="uid://b261kp5d48wqc" path="res://assets/graphics/fight/idle.png" id="5_6vh42"]
 [ext_resource type="Texture2D" uid="uid://5gugumx1jc30" path="res://assets/graphics/UI/dialogue_box.png" id="6_6vh42"]
@@ -149,12 +149,29 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_4k1nj"]
+resource_name = "player_died"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lpir7"]
 _data = {
 &"RESET": SubResource("Animation_a12nh"),
 &"enemy_damaged": SubResource("Animation_p1qf1"),
 &"enemy_died": SubResource("Animation_lpir7"),
-&"player_damaged": SubResource("Animation_6vh42")
+&"player_damaged": SubResource("Animation_6vh42"),
+&"player_died": SubResource("Animation_4k1nj")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn72j"]
@@ -180,7 +197,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_th188")
-enemy = ExtResource("2_p1qf1")
+enemy = ExtResource("2_6vh42")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -247,19 +264,19 @@ offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Attack" type="Button" parent="ActionsPanel/Actions"]
+[node name="Attack1Button" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 text = "ATTACK"
 
-[node name="Defend" type="Button" parent="ActionsPanel/Actions"]
+[node name="Attack2Button" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 text = "DEFEND"
 
-[node name="Run" type="Button" parent="ActionsPanel/Actions"]
+[node name="DefendButton" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -339,6 +356,6 @@ text = "25/50
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="ActionsPanel/Actions/Attack" to="." method="_on_attack_pressed"]
-[connection signal="pressed" from="ActionsPanel/Actions/Defend" to="." method="_on_defend_pressed"]
-[connection signal="pressed" from="ActionsPanel/Actions/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Attack1Button" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/Attack2Button" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="ActionsPanel/Actions/DefendButton" to="." method="_on_run_pressed"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MindDuelAction" load_steps=2 format=3 uid="uid://dy4j5twfw2kot"]
+
+[ext_resource type="Script" uid="uid://ct0h4almui4la" path="res://scripts/mind_duel_action.gd" id="1_lyd0y"]
+
+[resource]
+script = ExtResource("1_lyd0y")
+name = "Mental Shield"
+type = 1
+damage = 0
+triggers_minigame = false
+defend_type = "SHIELD"
+description = "Block emotional damage for a turn"

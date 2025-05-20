@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://buakt7a3sums8"]
+
+[ext_resource type="Resource" uid="uid://d23o4ldcviyj7" path="res://fightactions/test_attack_minigame.tres" id="1_akte3"]
+[ext_resource type="Resource" uid="uid://wesyh5cpmjve" path="res://fightactions/test_attack_simple.tres" id="2_sxg6k"]
+[ext_resource type="Resource" uid="uid://dy4j5twfw2kot" path="res://fightactions/test_defend.tres" id="3_vc0nl"]
+[ext_resource type="Script" uid="uid://cdn18x575x8sx" path="res://scripts/base_enemy.gd" id="4_w6wf1"]
+[ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="5_tqwli"]
+
+[resource]
+script = ExtResource("4_w6wf1")
+name = "Guilt Manifest"
+texture = ExtResource("5_tqwli")
+health = 50
+damage = 12
+actions = Array[Resource]([ExtResource("1_akte3"), ExtResource("2_sxg6k"), ExtResource("3_vc0nl")])
