@@ -3092,5 +3092,5 @@ shape = SubResource("RectangleShape2D_aph84")
 
 [node name="MemoryFragment" parent="." instance=ExtResource("9_ebr7o")]
 z_index = 2
-position = Vector2(-68, -26)
+position = Vector2(-34, -8)
 sprite = ExtResource("10_ebr7o")
