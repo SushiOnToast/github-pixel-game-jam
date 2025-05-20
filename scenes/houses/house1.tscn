@@ -2513,7 +2513,7 @@ size = Vector2(29, 20)
 [node name="House1" type="Node2D"]
 
 [node name="PlayerRPG" parent="." instance=ExtResource("3_hbjst")]
-position = Vector2(114, 11)
+position = Vector2(159, 65)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
 zoom = Vector2(4, 4)
@@ -2559,7 +2559,8 @@ tile_map_data = PackedByteArray("AAATAP//AAALAAwAAAATAAAAAAALAA0AAAA=")
 tile_set = SubResource("TileSet_se78b")
 
 [node name="TPZone" parent="." instance=ExtResource("5_ej7u6")]
-position = Vector2(160, 36)
+z_index = 2
+position = Vector2(162, 57)
 to_scene = ExtResource("6_gufhm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
