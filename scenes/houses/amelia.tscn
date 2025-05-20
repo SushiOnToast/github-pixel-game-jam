@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dbk43lef5ghbs"]
+[gd_scene load_steps=21 format=4 uid="uid://dbk43lef5ghbs"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_4jwbj"]
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="2_q3grx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_x8ke5"]
 [ext_resource type="PackedScene" uid="uid://206m4cggween" path="res://scenes/memory_fragment.tscn" id="9_oy7t8"]
 [ext_resource type="Texture2D" uid="uid://v6mwcukwcyug" path="res://assets/graphics/memory fragments/1.png" id="10_258ig"]
+[ext_resource type="AudioStream" uid="uid://bnkteeu8u7oyc" path="res://assets/graphics/audio/ticktock.mp3" id="11_258ig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
 texture = ExtResource("3_i2xle")
@@ -2763,3 +2764,9 @@ shape = SubResource("RectangleShape2D_aph84")
 z_index = 2
 position = Vector2(311, -105)
 sprite = ExtResource("10_258ig")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-17, -8)
+stream = ExtResource("11_258ig")
+volume_db = -20.303
+autoplay = true
