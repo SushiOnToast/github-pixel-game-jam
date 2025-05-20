@@ -3091,7 +3091,7 @@ shape = SubResource("RectangleShape2D_aph84")
 
 [node name="MemoryFragment" parent="." instance=ExtResource("9_ao7a1")]
 z_index = 2
-position = Vector2(105, -103)
+position = Vector2(113, -95)
 sprite = ExtResource("10_i2xrk")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
