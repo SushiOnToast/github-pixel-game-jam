@@ -155,9 +155,8 @@ signal minigame_result_signal
 
 func run_minigame() -> bool:
 	var minigame = minigame_scene.instantiate()
-	get_tree().current_scene.add_child(minigame)
+	self.add_child(minigame)
 
-	# Await the signal directly and get the arguments (a tuple)
 	var success = await minigame.result
 
 	return success
