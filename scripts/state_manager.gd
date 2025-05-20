@@ -1,4 +1,3 @@
-# StateManager.gd
 extends Node
 
 class_name StateManager  # This allows you to reference it anywhere via `StateManager`
@@ -25,6 +24,10 @@ var transitioning := false
 
 var dialogue: bool
 
+# Utility to determine if a scene is a menu and should not be cached
+func is_menu_scene(scene_key: String) -> bool:
+	return scene_key in ["StartMenu", "PauseMenu"]
+
 func switch_to(scene_path: String, scene_key: String) -> void:
 	if transitioning:
 		return
@@ -35,14 +38,19 @@ func switch_to(scene_path: String, scene_key: String) -> void:
 	
 	if current_scene:
 		remove_child(current_scene)
-		saved_scenes[current_scene.name] = current_scene
+		
+		# Save only non-menu scenes
+		if not is_menu_scene(current_scene.name):
+			saved_scenes[current_scene.name] = current_scene
 	
-	if saved_scenes.has(scene_key):
+	# If it's a menu scene, don't reuse — always instantiate fresh
+	if not is_menu_scene(scene_key) and saved_scenes.has(scene_key):
 		current_scene = saved_scenes[scene_key]
 	else:
 		var scene_resource = load(scene_path)
 		current_scene = scene_resource.instantiate()
-		saved_scenes[scene_key] = current_scene
+		if not is_menu_scene(scene_key):
+			saved_scenes[scene_key] = current_scene
 		
 	current_scene_path = scene_path
 	
@@ -57,7 +65,7 @@ func initialize() -> void:
 	
 func show_menu() -> void:
 	switch_to(START_MENU_PATH, "StartMenu")
-	
+
 #func show_pause() -> void:
 	#if transitioning or current_scene.name == "StartMenu":
 		#return
