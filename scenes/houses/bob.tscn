@@ -3072,7 +3072,7 @@ position_smoothing_enabled = true
 
 [node name="TPZone" parent="." instance=ExtResource("6_5g8yy")]
 z_index = 2
-position = Vector2(115, 52)
+position = Vector2(97, 71)
 to_scene = ExtResource("7_ai4xm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
@@ -3091,7 +3091,7 @@ shape = SubResource("RectangleShape2D_aph84")
 
 [node name="MemoryFragment" parent="." instance=ExtResource("9_ao7a1")]
 z_index = 2
-position = Vector2(133, -112)
+position = Vector2(105, -103)
 sprite = ExtResource("10_i2xrk")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

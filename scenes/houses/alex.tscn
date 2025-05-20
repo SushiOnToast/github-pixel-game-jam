@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dwoj35nf1282p" path="res://assets/graphics/heads/alexsleeping.png" id="4_xkpsv"]
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="5_ccta0"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_ayk04"]
-[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_uhlsn"]
+[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="8_ccta0"]
 [ext_resource type="PackedScene" uid="uid://206m4cggween" path="res://scenes/memory_fragment.tscn" id="9_d5n3j"]
 [ext_resource type="Texture2D" uid="uid://c22kq1u7ib6bh" path="res://assets/graphics/memory fragments/5.png" id="10_jdf3k"]
 [ext_resource type="AudioStream" uid="uid://bnkteeu8u7oyc" path="res://assets/graphics/audio/ticktock.mp3" id="11_ccta0"]
@@ -3081,7 +3081,7 @@ position_smoothing_enabled = true
 [node name="TPZone" parent="." instance=ExtResource("6_ayk04")]
 z_index = 2
 position = Vector2(116, 45)
-to_scene = ExtResource("7_uhlsn")
+to_scene = ExtResource("8_ccta0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
 position = Vector2(0.5, 0)
@@ -3090,7 +3090,7 @@ shape = SubResource("RectangleShape2D_aph84")
 [node name="TPZone2" parent="." instance=ExtResource("6_ayk04")]
 z_index = 2
 position = Vector2(-9, -10)
-to_scene = ExtResource("7_uhlsn")
+to_scene = ExtResource("9_d5n3j")
 battle = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone2"]
@@ -3099,7 +3099,7 @@ shape = SubResource("RectangleShape2D_aph84")
 
 [node name="MemoryFragment" parent="." instance=ExtResource("9_d5n3j")]
 z_index = 2
-position = Vector2(54, -10)
+position = Vector2(30, -7)
 sprite = ExtResource("10_jdf3k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
