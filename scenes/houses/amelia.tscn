@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dbk43lef5ghbs"]
+[gd_scene load_steps=20 format=4 uid="uid://dbk43lef5ghbs"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_4jwbj"]
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="2_q3grx"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dhg8g422an3ce" path="res://assets/graphics/heads/amelia.png" id="6_q3grx"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_wskms"]
 [ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_x8ke5"]
+[ext_resource type="PackedScene" uid="uid://206m4cggween" path="res://scenes/memory_fragment.tscn" id="9_oy7t8"]
+[ext_resource type="Texture2D" uid="uid://v6mwcukwcyug" path="res://assets/graphics/memory fragments/1.png" id="10_258ig"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
 texture = ExtResource("3_i2xle")
@@ -2756,3 +2758,8 @@ battle = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone2"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aph84")
+
+[node name="MemoryFragment" parent="." instance=ExtResource("9_oy7t8")]
+z_index = 2
+position = Vector2(232, -102)
+sprite = ExtResource("10_258ig")

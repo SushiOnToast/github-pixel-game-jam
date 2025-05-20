@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bhx1ek857hwdq"]
+[gd_scene load_steps=22 format=4 uid="uid://bhx1ek857hwdq"]
 
 [ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_p0b3f"]
 [ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_hqvoj"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="5_i2xrk"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_5g8yy"]
 [ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_ai4xm"]
+[ext_resource type="PackedScene" uid="uid://206m4cggween" path="res://scenes/memory_fragment.tscn" id="9_ao7a1"]
+[ext_resource type="Texture2D" uid="uid://onk4lf2bu0xj" path="res://assets/graphics/memory fragments/2.png" id="10_i2xrk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
 texture = ExtResource("1_p0b3f")
@@ -3085,3 +3087,6 @@ battle = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone2"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aph84")
+
+[node name="MemoryFragment" parent="." instance=ExtResource("9_ao7a1")]
+sprite = ExtResource("10_i2xrk")
