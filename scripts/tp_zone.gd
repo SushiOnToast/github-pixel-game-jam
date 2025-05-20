@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var to_scene: PackedScene
+@export var battle: bool = false
 
 @onready var state_manager: StateManager = get_tree().get_root().find_child("StateManager", true, false)
 @onready var day_night_manager: DayNightManager = get_tree().get_root().find_child("DayNightManager", true, false)
@@ -12,7 +13,9 @@ var to_scene_path: String = ""
 var to_scene_key: String = ""
 var parent_name: String = ""
 
-var dream_has_fragment = true	
+var house_mapping: Dictionary = State.house_mapping
+
+@export var battle_scene: PackedScene = preload("res://scenes/battle.tscn")
 
 func _ready() -> void:
 	texture_rect.visible = false
@@ -23,36 +26,35 @@ func _ready() -> void:
 		to_scene_path = to_scene.resource_path
 		to_scene_key = to_scene_path.get_file().get_basename()
 
-	# Fallback for houses with no explicit scene
 	parent_name = get_parent().name
-	if parent_name.begins_with("House") and to_scene_path == "":
+
+	# Fallback for house NPCs with no explicit scene
+	if house_mapping.has(parent_name.to_lower()) and to_scene_path == "" and not battle:
 		to_scene_path = "res://scenes/neighbourhood.tscn"
 		to_scene_key = "Neighbourhood"
 
 func _process(_delta: float) -> void:
-	var is_house = parent_name.begins_with("House")
-	var is_night = true	
-	if !parent_name.begins_with("House"):
+	var is_house = house_mapping.has(parent_name.to_lower())
+	var is_night = true
+	if not is_house:
 		is_night = day_night_manager.is_night
-	var is_dream_with_fragment_collected = false
-
-	if to_scene_key.begins_with("Dream".to_lower()):
-		is_dream_with_fragment_collected = state_manager.collected_fragments.has(to_scene_key.to_lower())
 
 	if is_house or is_night:
 		if player_in_area and Input.is_action_just_pressed("interact"):
-			if is_dream_with_fragment_collected:
-				return
-			state_manager.switch_to(to_scene_path, to_scene_key)
+			if house_mapping.has(parent_name.to_lower()) and battle:
+				var enemy_path = house_mapping[parent_name.to_lower()]
+				var enemy_resource = load(enemy_path)
+				var battle_instance = battle_scene.instantiate()
+				battle_instance.enemy = enemy_resource  # OR use a method if needed
+				state_manager.switch_to(battle_instance, "Battle")
+			else:
+				state_manager.switch_to(to_scene_path, to_scene_key)
 
-		# Only show the label/texture if the fragment is not collected
-		var can_show_prompt = not is_dream_with_fragment_collected
-		texture_rect.visible = player_in_area and can_show_prompt
-		label.visible = player_in_area and can_show_prompt
+		texture_rect.visible = player_in_area
+		label.visible = player_in_area
 	else:
 		texture_rect.visible = false
 		label.visible = false
-
 
 func _on_body_entered(_body: CharacterBody2D) -> void:
 	player_in_area = true
