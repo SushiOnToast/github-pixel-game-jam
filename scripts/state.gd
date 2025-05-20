@@ -21,10 +21,10 @@ var house_mapping: Dictionary = {
 
 var tp_dict: Dictionary = {
 	"res://enemies/amelia.tres": "res://scenes/houses/amelia.tscn",
-	"res://enemies/scout1.tres": "res://scenes/houses/amelia.tscn",
-	"res://enemies/alex.tres": "res://scenes/houses/amelia.tscn",
-	"res://enemies/bob.tres": "res://scenes/houses/amelia.tscn",
-	"res://enemies/adam.tres": "res://scenes/houses/amelia.tscn",
+	"res://enemies/scout1.tres": "res://scenes/houses/scout1.tscn",
+	"res://enemies/alex.tres": "res://scenes/houses/alex.tscn",
+	"res://enemies/bob.tres": "res://scenes/houses/bob.tscn",
+	"res://enemies/adam.tres": "res://scenes/houses/adam.tscn",
 }
 
 var key_dict: Dictionary = {

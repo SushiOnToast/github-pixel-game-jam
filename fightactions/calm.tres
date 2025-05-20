@@ -6,7 +6,7 @@
 script = ExtResource("1_cnbvp")
 name = "CALM"
 type = 1
-damage = 0
+damage = 5
 triggers_minigame = false
 defend_type = "CALM"
 description = "A calming breath that restores your inner resolve."

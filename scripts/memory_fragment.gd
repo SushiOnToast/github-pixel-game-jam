@@ -48,6 +48,7 @@ func _process(delta: float) -> void:
 	
 	if player_in_area and Input.is_action_just_pressed("interact") and not interacted:
 		interacted = true	
+		state_manager.dialogue = true
 		state_manager.collected_fragments[get_parent().name.to_lower()] = true
 		await say_text("You picked up %s" % type.to_upper())
 		
@@ -62,6 +63,7 @@ func _process(delta: float) -> void:
 func _wait_for_balloon_end(balloon: BaseDialogueBalloon) -> void:
 	while is_instance_valid(balloon) and balloon.get_parent() != null:
 		await get_tree().process_frame
+	state_manager.dialogue = false
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	player_in_area = true
