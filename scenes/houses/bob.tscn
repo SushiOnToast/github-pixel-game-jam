@@ -3080,6 +3080,7 @@ shape = SubResource("RectangleShape2D_aph84")
 z_index = 2
 position = Vector2(82, -109)
 to_scene = ExtResource("7_ai4xm")
+battle = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone2"]
 position = Vector2(0.5, 0)
