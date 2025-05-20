@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cv13rl06hipar"]
+[gd_scene load_steps=28 format=3 uid="uid://cv13rl06hipar"]
 
 [ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://dpsnkcci5wv88" path="res://scripts/battle.gd" id="1_th188"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b261kp5d48wqc" path="res://assets/graphics/fight/idle.png" id="5_6vh42"]
 [ext_resource type="Texture2D" uid="uid://5gugumx1jc30" path="res://assets/graphics/UI/dialogue_box.png" id="6_6vh42"]
 [ext_resource type="AudioStream" uid="uid://bbqm8hsuxjqhc" path="res://assets/graphics/audio/13 - Danger.ogg" id="7_4k1nj"]
+[ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="7_f4pi3"]
+[ext_resource type="FontFile" uid="uid://bbyfmunnflpii" path="res://assets/fonts/pixelify_sans/static/PixelifySans-Regular.ttf" id="7_yahae"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4k1nj"]
 atlas = ExtResource("4_lpir7")
@@ -190,8 +192,8 @@ expand_margin_bottom = 1.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4k1nj"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th188"]
-texture = ExtResource("1_dn72j")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yahae"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -256,15 +258,25 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_6vh42")
 
+[node name="Label" type="Label" parent="ActionsPanel"]
+layout_mode = 2
+offset_left = 435.0
+offset_top = -90.0
+offset_right = 719.0
+offset_bottom = -51.0
+theme_override_fonts/font = ExtResource("7_yahae")
+theme_override_font_sizes/font_size = 32
+text = "Choose your move:"
+
 [node name="Actions" type="HBoxContainer" parent="ActionsPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 52.0
-offset_top = -57.0
-offset_right = -45.0
-offset_bottom = -54.0
+offset_left = 99.0
+offset_top = -38.0
+offset_right = -99.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -272,18 +284,36 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f4pi3")
+theme_override_font_sizes/font_size = 32
 text = "ATTACK"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
 
 [node name="Attack2Button" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f4pi3")
+theme_override_font_sizes/font_size = 32
 text = "DEFEND"
+
+[node name="MarginContainer3" type="MarginContainer" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
 
 [node name="DefendButton" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme_override_fonts/font = ExtResource("7_f4pi3")
+theme_override_font_sizes/font_size = 32
 text = "RUN"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -321,17 +351,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 49.0
-offset_right = 6.0
-offset_bottom = 68.0
+offset_left = -12.0
+offset_top = 42.0
+offset_right = -12.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("7_f4pi3")
+theme_override_font_sizes/font_size = 32
 text = "25/50
 "
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ProgressPanel"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
 
 [node name="EnemyProgress" type="ProgressBar" parent="MarginContainer/ProgressPanel"]
 custom_minimum_size = Vector2(0, 40)
@@ -339,7 +376,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_dn72j")
-theme_override_styles/fill = SubResource("StyleBoxTexture_th188")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yahae")
 value = 50.0
 show_percentage = false
 
@@ -348,17 +385,21 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 2.5
-offset_right = -2.0
-offset_bottom = 21.5
+offset_left = -15.0
+offset_top = 42.0
+offset_right = -15.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("7_f4pi3")
+theme_override_font_sizes/font_size = 32
 text = "25/50
 "
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ProgressPanel"]
+layout_mode = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_4k1nj")

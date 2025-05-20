@@ -75,7 +75,7 @@ func _ready() -> void:
 func set_health(progress_bar_node, health, max_health):
 	progress_bar_node.value = health
 	progress_bar_node.max_value = max_health
-	progress_bar_node.get_node("Label").text = "HP:%d/%d" % [health, max_health]
+	progress_bar_node.get_node("Label").text = "HP: %d/%d" % [health, max_health]
 
 func enemy_turn():
 	$ActionsPanel.hide()
