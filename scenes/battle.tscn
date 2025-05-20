@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cv13rl06hipar"]
+[gd_scene load_steps=25 format=3 uid="uid://cv13rl06hipar"]
 
 [ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://dpsnkcci5wv88" path="res://scripts/battle.gd" id="1_th188"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://blknmg5f5r3rj" path="res://assets/graphics/fight/fightanimate.png" id="4_lpir7"]
 [ext_resource type="Texture2D" uid="uid://b261kp5d48wqc" path="res://assets/graphics/fight/idle.png" id="5_6vh42"]
 [ext_resource type="Texture2D" uid="uid://5gugumx1jc30" path="res://assets/graphics/UI/dialogue_box.png" id="6_6vh42"]
+[ext_resource type="AudioStream" uid="uid://bbqm8hsuxjqhc" path="res://assets/graphics/audio/13 - Danger.ogg" id="7_4k1nj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4k1nj"]
 atlas = ExtResource("4_lpir7")
@@ -355,6 +356,10 @@ text = "25/50
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4k1nj")
+autoplay = true
 
 [connection signal="pressed" from="ActionsPanel/Actions/Attack1Button" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="ActionsPanel/Actions/Attack2Button" to="." method="_on_defend_pressed"]
