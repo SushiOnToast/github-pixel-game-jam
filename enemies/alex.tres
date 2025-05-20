@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://cwadky0jdyq7y"]
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://crywy6cbmpl4n"]
 
-[ext_resource type="Resource" uid="uid://ckalst3oeqcxl" path="res://fightactions/resolve.tres" id="1_7b1xp"]
-[ext_resource type="Script" uid="uid://cdn18x575x8sx" path="res://scripts/base_enemy.gd" id="1_i4kty"]
-[ext_resource type="Resource" uid="uid://b6sytwueoltxg" path="res://fightactions/compassion.tres" id="2_6t68m"]
-[ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="2_nrwrm"]
-[ext_resource type="Resource" uid="uid://cdws051quxabb" path="res://fightactions/reflect.tres" id="3_7b1xp"]
+[ext_resource type="Resource" path="res://fightactions/resolve.tres" id="1_7b1xp"]
+[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_i4kty"]
+[ext_resource type="Resource" path="res://fightactions/compassion.tres" id="2_6t68m"]
+[ext_resource type="Resource" path="res://fightactions/reflect.tres" id="3_7b1xp"]
+[ext_resource type="Texture2D" uid="uid://do6n585a2712k" path="res://assets/graphics/fight/shadowenemy1.png" id="5_7b1xp"]
 
 [resource]
 script = ExtResource("1_i4kty")
 name = "Alex"
-texture = ExtResource("2_nrwrm")
+texture = ExtResource("5_7b1xp")
 health = 60
 damage = 15
 actions = Array[Resource]([ExtResource("1_7b1xp"), ExtResource("2_6t68m"), ExtResource("3_7b1xp")])
