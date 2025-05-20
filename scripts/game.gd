@@ -15,16 +15,5 @@ func _process(delta: float) -> void:
 	if state_manager.collected_fragments.size() == 5:
 		await get_tree().create_timer(2.0).timeout
 		state_manager.switch_to("res://scenes/final_scene.tscn", "FinalScene")
-		
-#func _process(delta: float) -> void:
-	#print(state_manager.collected_fragments)
-	#if Input.is_action_just_pressed("pause"):
-		#pause()
-		#
-#func pause():
-	#if paused:
-		#pause_menu.hide()
-		#Engine.time_scale = 1
-	#else:
-		#pause_menu.show()
-		#Engine.time_scale = 0
+	if Input.is_action_just_pressed("pause"):
+		state_manager.show_pause()

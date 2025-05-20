@@ -104,7 +104,7 @@ func enemy_turn():
 
 	current_player_health = max(0, current_player_health - damage_taken)
 	set_health(player_progress, current_player_health, State.max_health)
-
+	$ActionsPanel.hide()
 	$AnimationPlayer.play("player_damaged")
 	await $AnimationPlayer.animation_finished
 	await say_text("You took %d damage" % damage_taken)
@@ -209,6 +209,7 @@ func handle_attack(action: MindDuelAction):
 
 	current_enemy_health = max(0, current_enemy_health - damage)
 	set_health(enemy_progress, current_enemy_health, enemy.health)
+	$ActionsPanel.hide()
 
 	$AnimationPlayer.play("enemy_damaged")
 	await $AnimationPlayer.animation_finished

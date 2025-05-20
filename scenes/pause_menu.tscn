@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://beuvslr332bet"]
+[gd_scene load_steps=5 format=3 uid="uid://beuvslr332bet"]
 
 [ext_resource type="Script" uid="uid://c40pwffu4tdf7" path="res://scripts/pause_menu.gd" id="1_v4r4p"]
 [ext_resource type="Texture2D" uid="uid://bauau1frdekq7" path="res://assets/graphics/UI/start_menu_bg.png" id="2_1s2dm"]
-[ext_resource type="Script" uid="uid://cnnjfct8fbddw" path="res://scripts/menu.gd" id="3_88e76"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="4_knqa7"]
-[ext_resource type="Texture2D" uid="uid://dj15gq2x8663q" path="res://assets/graphics/UI/selection_arrow.png" id="5_71k7c"]
 [ext_resource type="FontFile" uid="uid://dr1btho4uwfxr" path="res://assets/fonts/yoster/yoster.ttf" id="6_cmnsq"]
 
 [node name="PauseMenu" type="Control"]
@@ -23,34 +21,6 @@ offset_right = 1152.0
 offset_bottom = 719.0
 texture = ExtResource("2_1s2dm")
 
-[node name="Menu" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 906.0
-offset_top = 450.0
-offset_right = 1101.0
-offset_bottom = 534.0
-script = ExtResource("3_88e76")
-metadata/_custom_type_script = "uid://cnnjfct8fbddw"
-
-[node name="Resume" type="Label" parent="Menu"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_knqa7")
-theme_override_font_sizes/font_size = 40
-text = "Resume"
-horizontal_alignment = 2
-
-[node name="Quit" type="Label" parent="Menu"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_knqa7")
-theme_override_font_sizes/font_size = 40
-text = "Quit"
-horizontal_alignment = 2
-
-[node name="SelectionArrow" type="Sprite2D" parent="."]
-position = Vector2(890, 466)
-scale = Vector2(3.5858, 3.70833)
-texture = ExtResource("5_71k7c")
-
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 610.0
@@ -65,14 +35,12 @@ autowrap_mode = 2
 
 [node name="Guide" type="Label" parent="."]
 layout_mode = 0
-offset_left = 785.0
-offset_top = 391.0
-offset_right = 1099.0
-offset_bottom = 426.0
+offset_left = 630.0
+offset_top = 348.0
+offset_right = 1101.0
+offset_bottom = 399.0
 theme_override_fonts/font = ExtResource("4_knqa7")
-theme_override_font_sizes/font_size = 16
-text = "Up and Down Arrows to Navigate
-Space to Select"
+theme_override_font_sizes/font_size = 24
+text = "Press SPACE to continue
+Press Q to quit"
 horizontal_alignment = 2
-
-[connection signal="actioned" from="Menu" to="." method="_on_menu_actioned"]

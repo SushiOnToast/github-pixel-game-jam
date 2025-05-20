@@ -26,7 +26,7 @@ var dialogue: bool
 
 # Utility to determine if a scene is a menu and should not be cached
 func is_menu_scene(scene_key: String) -> bool:
-	return scene_key in ["StartMenu", "PauseMenu"]
+	return scene_key in ["StartMenu", "PauseMenu", "GameOver", "Battle"]
 
 func switch_to(scene_path: String, scene_key: String) -> void:
 	if transitioning:
@@ -70,14 +70,11 @@ func initialize() -> void:
 func show_menu() -> void:
 	switch_to(START_MENU_PATH, "StartMenu")
 
-#func show_pause() -> void:
-	#if transitioning or current_scene.name == "StartMenu":
-		#return
-	#
-	#prev_scene = current_scene
-	#prev_scene_path = current_scene_path
-	#
-	#switch_to(PAUSE_MENU_PATH, "PauseMenu")
-	#
-#func resume() -> void:
-	#switch_to(prev_scene_path, prev_scene.name)
+func show_pause() -> void:
+	if transitioning or current_scene.name == "StartMenu":
+		return
+	
+	switch_to(PAUSE_MENU_PATH, "PauseMenu")
+	
+func resume() -> void:
+	switch_to(prev_scene_path, prev_scene.name)
