@@ -9,7 +9,7 @@ var game_over = false
 var target_scene_path: String
 var target_scene_key: String
 
-var current_battle:String = "res://enemies/amelia.tres"
+var current_battle:String = "res://enemies/alex.tres"
 
 var house_mapping: Dictionary = {
 	"amelia": "res://enemies/amelia.tres",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cv13rl06hipar"]
+[gd_scene load_steps=26 format=3 uid="uid://cv13rl06hipar"]
 
 [ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://dpsnkcci5wv88" path="res://scripts/battle.gd" id="1_th188"]
@@ -176,16 +176,19 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn72j"]
-bg_color = Color(0.450648, 0.450648, 0.450648, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4k1nj"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th188"]
 texture = ExtResource("1_dn72j")
@@ -309,7 +312,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_dn72j")
-theme_override_styles/fill = SubResource("StyleBoxTexture_th188")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4k1nj")
 value = 50.0
 show_percentage = false
 
@@ -318,10 +321,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 2.5
-offset_right = -2.0
-offset_bottom = 21.5
+offset_left = 6.0
+offset_top = 49.0
+offset_right = 6.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
