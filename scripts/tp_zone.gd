@@ -31,7 +31,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	var is_house = parent_name.begins_with("House")
-	var is_night = day_night_manager.is_night
+	var is_night = true	
+	if !parent_name.begins_with("House"):
+		is_night = day_night_manager.is_night
 	var is_dream_with_fragment_collected = false
 
 	if to_scene_key.begins_with("Dream".to_lower()):

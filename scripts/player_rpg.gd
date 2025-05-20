@@ -15,10 +15,11 @@ func _ready() -> void:
 	start_position = position  # Save initial spawn position
 
 func _process(delta: float) -> void:
-	if day_night_manager.is_night and not reset_night:
-		reset_night = true
-		await get_tree().create_timer(1.0).timeout
-		position = start_position
+	if !get_parent().name.begins_with("House"):
+		if day_night_manager.is_night and not reset_night:
+			reset_night = true
+			await get_tree().create_timer(1.0).timeout
+			position = start_position
 
 func _physics_process(delta: float) -> void:
 	if state_manager.dialogue:
