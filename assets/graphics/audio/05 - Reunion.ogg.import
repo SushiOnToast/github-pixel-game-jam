@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cymfu1ryk51nu"
+path="res://.godot/imported/05 - Reunion.ogg-94e3e9fe2567db19a2f51e4d300b89bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/graphics/audio/05 - Reunion.ogg"
+dest_files=["res://.godot/imported/05 - Reunion.ogg-94e3e9fe2567db19a2f51e4d300b89bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

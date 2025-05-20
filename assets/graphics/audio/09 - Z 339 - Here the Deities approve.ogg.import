@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2tg056vm4hop"
+path="res://.godot/imported/09 - Z 339 - Here the Deities approve.ogg-a9a6a52f5bae0c8e83ea1e92466d8bde.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/graphics/audio/09 - Z 339 - Here the Deities approve.ogg"
+dest_files=["res://.godot/imported/09 - Z 339 - Here the Deities approve.ogg-a9a6a52f5bae0c8e83ea1e92466d8bde.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

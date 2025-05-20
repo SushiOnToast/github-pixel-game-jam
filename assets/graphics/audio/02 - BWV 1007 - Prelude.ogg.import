@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dat0esg85mdlo"
+path="res://.godot/imported/02 - BWV 1007 - Prelude.ogg-a5bb4ca53db5739015ad2ef96371d591.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/graphics/audio/02 - BWV 1007 - Prelude.ogg"
+dest_files=["res://.godot/imported/02 - BWV 1007 - Prelude.ogg-a5bb4ca53db5739015ad2ef96371d591.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

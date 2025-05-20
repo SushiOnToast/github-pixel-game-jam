@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cy80tw646v5dg"
+path="res://.godot/imported/19 - Courtesan.ogg-d1499561edd8f11b6a53fb11a168ade1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/graphics/audio/19 - Courtesan.ogg"
+dest_files=["res://.godot/imported/19 - Courtesan.ogg-d1499561edd8f11b6a53fb11a168ade1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

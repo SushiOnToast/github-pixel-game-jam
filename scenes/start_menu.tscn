@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b682bf1s4b2vs"]
+[gd_scene load_steps=8 format=3 uid="uid://b682bf1s4b2vs"]
 
 [ext_resource type="Script" uid="uid://bfq0gkywuuqri" path="res://scripts/start_menu.gd" id="1_m7x51"]
 [ext_resource type="Script" uid="uid://cnnjfct8fbddw" path="res://scripts/menu.gd" id="1_thu50"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dj15gq2x8663q" path="res://assets/graphics/UI/selection_arrow.png" id="2_m7x51"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="4_4v6gu"]
 [ext_resource type="FontFile" uid="uid://dr1btho4uwfxr" path="res://assets/fonts/yoster/yoster.ttf" id="6_4v6gu"]
+[ext_resource type="AudioStream" uid="uid://dua70u05a51y8" path="res://assets/graphics/audio/01 - Opening.ogg" id="7_nxjfj"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -75,5 +76,9 @@ theme_override_font_sizes/font_size = 16
 text = "Up and Down Arrows to Navigate
 Space to Select"
 horizontal_alignment = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nxjfj")
+autoplay = true
 
 [connection signal="actioned" from="Menu" to="." method="_on_menu_actioned"]

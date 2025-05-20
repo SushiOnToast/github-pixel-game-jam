@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cv13rl06hipar"]
 
 [ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="1_dn72j"]
-[ext_resource type="Script" path="res://scripts/battle.gd" id="1_th188"]
+[ext_resource type="Script" uid="uid://dpsnkcci5wv88" path="res://scripts/battle.gd" id="1_th188"]
 [ext_resource type="Resource" uid="uid://crywy6cbmpl4n" path="res://enemies/alex.tres" id="2_6vh42"]
 [ext_resource type="Texture2D" uid="uid://blknmg5f5r3rj" path="res://assets/graphics/fight/fightanimate.png" id="4_lpir7"]
 [ext_resource type="Texture2D" uid="uid://b261kp5d48wqc" path="res://assets/graphics/fight/idle.png" id="5_6vh42"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cq6spu2tl4hxl"
+path="res://.godot/imported/04 - Sanctuary.ogg-3b420838c78fc4c6ef6903fea198a62c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/graphics/audio/04 - Sanctuary.ogg"
+dest_files=["res://.godot/imported/04 - Sanctuary.ogg-3b420838c78fc4c6ef6903fea198a62c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

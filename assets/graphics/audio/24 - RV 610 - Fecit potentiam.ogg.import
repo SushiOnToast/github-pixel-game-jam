@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwwtecyrlxxx2"
+path="res://.godot/imported/24 - RV 610 - Fecit potentiam.ogg-d931e194cb3c25fc463ab10591bd308c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/graphics/audio/24 - RV 610 - Fecit potentiam.ogg"
+dest_files=["res://.godot/imported/24 - RV 610 - Fecit potentiam.ogg-d931e194cb3c25fc463ab10591bd308c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
