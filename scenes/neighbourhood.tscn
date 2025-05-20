@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://b5loh0re42lpl"]
+[gd_scene load_steps=112 format=4 uid="uid://b5loh0re42lpl"]
 
 [ext_resource type="Texture2D" uid="uid://bnrf4ier8d3vh" path="res://assets/graphics/tilesets/exteriors/2_City_Terrains_16x16.png" id="2_6ds24"]
 [ext_resource type="Texture2D" uid="uid://nkic0c38n2p" path="res://assets/graphics/tilesets/exteriors/19_Graveyard_16x16.png" id="2_nq1h2"]
@@ -26,7 +26,12 @@
 [ext_resource type="Resource" uid="uid://d3qbm2dbihulh" path="res://dialogue/conversations/postman.dialogue" id="17_lwlkt"]
 [ext_resource type="Resource" uid="uid://3jdh4l3axnw7" path="res://dialogue/conversations/scout2.dialogue" id="17_r5bpt"]
 [ext_resource type="Texture2D" uid="uid://20l3elpfindu" path="res://assets/graphics/characters/Modern_Exteriors_Characters_Postman_16x16_1.png" id="17_xgikh"]
-[ext_resource type="PackedScene" uid="uid://bhx1ek857hwdq" path="res://scenes/houses/house6.tscn" id="27_s5at5"]
+[ext_resource type="PackedScene" uid="uid://b21om77dw6euq" path="res://scenes/houses/house1.tscn" id="27_bpyjm"]
+[ext_resource type="PackedScene" uid="uid://ddubxgh8aw1kq" path="res://scenes/houses/house2.tscn" id="27_s5at5"]
+[ext_resource type="PackedScene" uid="uid://2k05iauiuhqt" path="res://scenes/houses/house3.tscn" id="29_eh1ip"]
+[ext_resource type="PackedScene" uid="uid://clcr1qt5b2nqc" path="res://scenes/houses/house4.tscn" id="30_ignml"]
+[ext_resource type="PackedScene" uid="uid://gpfqnw4hxp1w" path="res://scenes/houses/house5.tscn" id="31_5tgo3"]
+[ext_resource type="PackedScene" uid="uid://bhx1ek857hwdq" path="res://scenes/houses/house6.tscn" id="32_o2sbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
 texture = ExtResource("2_nq1h2")
@@ -19359,8 +19364,53 @@ gradient = ExtResource("11_p8evq")
 
 [node name="TPZone" parent="TPZones" instance=ExtResource("11_xdpe8")]
 position = Vector2(572, 63)
-to_scene = ExtResource("27_s5at5")
+to_scene = ExtResource("27_bpyjm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone"]
+position = Vector2(-1.75, -5.5)
+shape = SubResource("RectangleShape2D_j2qjn")
+
+[node name="TPZone2" parent="TPZones" instance=ExtResource("11_xdpe8")]
+z_index = 2
+position = Vector2(1452, 65)
+to_scene = ExtResource("27_s5at5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone2"]
+position = Vector2(-1.75, -5.5)
+shape = SubResource("RectangleShape2D_j2qjn")
+
+[node name="TPZone3" parent="TPZones" instance=ExtResource("11_xdpe8")]
+z_index = 2
+position = Vector2(1307, -265)
+to_scene = ExtResource("29_eh1ip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone3"]
+position = Vector2(-1.75, -5.5)
+shape = SubResource("RectangleShape2D_j2qjn")
+
+[node name="TPZone4" parent="TPZones" instance=ExtResource("11_xdpe8")]
+z_index = 2
+position = Vector2(-347, -547)
+to_scene = ExtResource("30_ignml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone4"]
+position = Vector2(-1.75, -5.5)
+shape = SubResource("RectangleShape2D_j2qjn")
+
+[node name="TPZone5" parent="TPZones" instance=ExtResource("11_xdpe8")]
+z_index = 2
+position = Vector2(-725, -63)
+to_scene = ExtResource("31_5tgo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone5"]
+position = Vector2(-1.75, -5.5)
+shape = SubResource("RectangleShape2D_j2qjn")
+
+[node name="TPZone6" parent="TPZones" instance=ExtResource("11_xdpe8")]
+z_index = 2
+position = Vector2(-1010, 184)
+to_scene = ExtResource("32_o2sbu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone6"]
 position = Vector2(-1.75, -5.5)
 shape = SubResource("RectangleShape2D_j2qjn")
