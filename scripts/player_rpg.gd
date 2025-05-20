@@ -15,7 +15,8 @@ func _ready() -> void:
 	start_position = position  # Save initial spawn position
 
 func _process(delta: float) -> void:
-	if !get_parent().name.begins_with("House"):
+	var is_house = State.house_mapping.has(get_parent().name.to_lower())
+	if !is_house:
 		if day_night_manager.is_night and not reset_night:
 			reset_night = true
 			await get_tree().create_timer(1.0).timeout
