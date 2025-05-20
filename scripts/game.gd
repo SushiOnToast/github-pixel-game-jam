@@ -14,9 +14,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if State.game_over:
 		state_manager.switch_to("res://scenes/game_over.tscn", "GameOver")
-		var game_over: GameOver = get_tree().get_root().find_child("GameOver", true, false)
-		game_over.target_scene_key = State.target_scene_key
-		game_over.target_scene_path = State.target_Scene_path
 	if state_manager.collected_fragments.size() == 5:
 		await get_tree().create_timer(2.0).timeout
 		state_manager.switch_to("res://scenes/final_scene.tscn", "FinalScene")

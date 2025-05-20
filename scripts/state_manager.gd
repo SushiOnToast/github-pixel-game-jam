@@ -36,7 +36,11 @@ func switch_to(scene_path: String, scene_key: String) -> void:
 	animation_player.play("dissolve")
 	await animation_player.animation_finished
 	
+	# Save current scene info before switching
 	if current_scene:
+		prev_scene = current_scene
+		prev_scene_path = current_scene_path
+		
 		remove_child(current_scene)
 		
 		# Save only non-menu scenes

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b21om77dw6euq"]
+[gd_scene load_steps=15 format=4 uid="uid://dbk43lef5ghbs"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_4jwbj"]
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="2_q3grx"]
