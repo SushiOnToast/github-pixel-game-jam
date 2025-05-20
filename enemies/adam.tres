@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://b7gkp47hrb3vh"]
 
-[ext_resource type="Script" uid="uid://cdn18x575x8sx" path="res://scripts/base_enemy.gd" id="1_ianx8"]
-[ext_resource type="Resource" uid="uid://doeadum72wa7w" path="res://fightactions/clarity.tres" id="1_xdd8e"]
-[ext_resource type="Resource" uid="uid://crroxjwxebl7a" path="res://fightactions/stabilise.tres" id="2_ncaoo"]
-[ext_resource type="Resource" uid="uid://bra7jbsesssab" path="res://fightactions/calm.tres" id="3_iviql"]
-[ext_resource type="Texture2D" uid="uid://do6n585a2712k" path="res://assets/graphics/fight/shadowenemy1.png" id="5_xdd8e"]
+[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_ianx8"]
+[ext_resource type="Resource" path="res://fightactions/clarity.tres" id="1_xdd8e"]
+[ext_resource type="Resource" path="res://fightactions/stabilise.tres" id="2_ncaoo"]
+[ext_resource type="Resource" path="res://fightactions/calm.tres" id="3_iviql"]
+[ext_resource type="Texture2D" uid="uid://cnm4v351olgoh" path="res://assets/graphics/fight/shadow.png" id="5_xdd8e"]
 
 [resource]
 script = ExtResource("1_ianx8")

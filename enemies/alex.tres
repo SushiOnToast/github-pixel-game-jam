@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_i4kty"]
 [ext_resource type="Resource" path="res://fightactions/compassion.tres" id="2_6t68m"]
 [ext_resource type="Resource" path="res://fightactions/reflect.tres" id="3_7b1xp"]
-[ext_resource type="Texture2D" uid="uid://do6n585a2712k" path="res://assets/graphics/fight/shadowenemy1.png" id="5_7b1xp"]
+[ext_resource type="Texture2D" uid="uid://cnm4v351olgoh" path="res://assets/graphics/fight/shadow.png" id="5_7b1xp"]
 
 [resource]
 script = ExtResource("1_i4kty")
