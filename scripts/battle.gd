@@ -23,13 +23,15 @@ var enemy_damage_buff_percent = 0.0  # % increase to enemy next attack damage (a
 	"defend": $ActionsPanel/Actions/DefendButton
 }
 
+@onready var minigame_scene = preload("res://scenes/timing_minigame.tscn")
+
 @onready var balloon_scene = preload("res://dialogue/dialogue_balloon.tscn")
 @onready var player_progress: ProgressBar = $MarginContainer/ProgressPanel/PlayerProgress
 @onready var enemy_progress: ProgressBar = $MarginContainer/ProgressPanel/EnemyProgress
 
 func say_text(text: String) -> void:
 	$ActionsPanel.hide()
-	var dialogue_text := "~ start\nNarrator: %s" % text
+	var dialogue_text := "~ start\n ???: %s" % text
 	var resource = DialogueManager.create_resource_from_text(dialogue_text)
 
 	if resource == null:
@@ -106,6 +108,7 @@ func enemy_turn():
 
 	if current_player_health == 0:
 		await say_text("You lost the duel...")
+		$ActionsPanel.hide()
 		$AnimationPlayer.play("player_died")
 		await $AnimationPlayer.animation_finished
 		# get_tree().change_scene_to_file("res://game_over_scene.tscn")
@@ -126,7 +129,7 @@ func handle_defend(action: MindDuelAction):
 				skip_next_turn = true
 				buff_next_attack = true
 				await say_text("You strain your mind to maintain the shield and must skip your next turn, but your next attack will be empowered!")
-		"CLARITY":
+		"CALM":
 			current_player_health = min(State.max_health, current_player_health + action.damage)
 			set_health(player_progress, current_player_health, State.max_health)
 			await say_text("You regain clarity (+%d HP), but your mind feels fatigued..." % action.damage)
@@ -144,6 +147,22 @@ func handle_defend(action: MindDuelAction):
 	turn_state = "ENEMY"
 	await enemy_turn()
 
+var _minigame_success = false
+signal minigame_result_signal
+
+func run_minigame() -> bool:
+	var minigame = minigame_scene.instantiate()
+	get_tree().current_scene.add_child(minigame)
+
+	# Await the signal directly and get the arguments (a tuple)
+	var success = await minigame.result
+
+	return success
+
+func _on_minigame_result(success: bool) -> void:
+	_minigame_success = success
+	emit_signal("minigame_result_signal")
+
 func handle_attack(action: MindDuelAction):
 	# Skip attack if skipping next turn due to shield penalty or reflect debuff
 	if skip_next_turn or reflect_skip_next_turn:
@@ -160,10 +179,18 @@ func handle_attack(action: MindDuelAction):
 
 	if action.triggers_minigame:
 		await say_text("You prepare for a mental challenge!")
-		# insert minigame trigger here
-		await say_text("You overcame the guilt!")
+		var success = await run_minigame()
+		if success:
+			await say_text("You pusehd through!")
+		else:
+			await say_text("You failed the mental challenge!")
+			# Skip damage application and enemy turn; or just end turn
+			turn_state = "ENEMY"
+			await enemy_turn()
+			return
 	else:
 		await say_text("You strike with: %s" % action.name)
+
 
 	var damage = action.damage
 

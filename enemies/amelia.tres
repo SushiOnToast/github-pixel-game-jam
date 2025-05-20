@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://dbhyfe846uxgc"]
+
+[ext_resource type="Resource" uid="uid://doeadum72wa7w" path="res://fightactions/clarity.tres" id="1_8t0es"]
+[ext_resource type="Script" uid="uid://cdn18x575x8sx" path="res://scripts/base_enemy.gd" id="1_ojla0"]
+[ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="2_ctqe4"]
+[ext_resource type="Resource" uid="uid://crroxjwxebl7a" path="res://fightactions/stabilise.tres" id="2_r2wc8"]
+[ext_resource type="Resource" uid="uid://cygk4nx4t73re" path="res://fightactions/resist.tres" id="3_cgmwe"]
+
+[resource]
+script = ExtResource("1_ojla0")
+name = "Amelia"
+texture = ExtResource("2_ctqe4")
+health = 35
+damage = 15
+actions = Array[Resource]([ExtResource("1_8t0es"), ExtResource("2_r2wc8"), ExtResource("3_cgmwe")])
+dialogue = Array[String](["One more time, perfectly.", "Mistakes are unacceptable.", "A broken flower must not shine."])

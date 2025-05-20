@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MindDuelAction" load_steps=2 format=3 uid="uid://doeadum72wa7w"]
+
+[ext_resource type="Script" uid="uid://ct0h4almui4la" path="res://scripts/mind_duel_action.gd" id="1_hnfe1"]
+
+[resource]
+script = ExtResource("1_hnfe1")
+name = "CLARITY"
+type = 0
+damage = 20
+triggers_minigame = true
+defend_type = "RESIST"
+description = "A focused burst of insight that cuts through emotional fog."

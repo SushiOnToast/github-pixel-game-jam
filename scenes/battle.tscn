@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://dpsnkcci5wv88" path="res://scripts/battle.gd" id="1_th188"]
-[ext_resource type="Resource" uid="uid://buakt7a3sums8" path="res://enemies/test_enemy.tres" id="2_6vh42"]
+[ext_resource type="Resource" uid="uid://cwadky0jdyq7y" path="res://enemies/alex.tres" id="2_6vh42"]
 [ext_resource type="Texture2D" uid="uid://blknmg5f5r3rj" path="res://assets/graphics/fight/fightanimate.png" id="4_lpir7"]
 [ext_resource type="Texture2D" uid="uid://b261kp5d48wqc" path="res://assets/graphics/fight/idle.png" id="5_6vh42"]
 [ext_resource type="Texture2D" uid="uid://5gugumx1jc30" path="res://assets/graphics/UI/dialogue_box.png" id="6_6vh42"]
@@ -76,21 +76,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="Animation" id="Animation_p1qf1"]
-resource_name = "enemy_damaged"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Enemy:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_a12nh"]
 length = 0.001
 tracks/0/type = "value"
@@ -116,6 +101,21 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p1qf1"]
+resource_name = "enemy_damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_lpir7"]

@@ -6,6 +6,8 @@ class_name MemoryFragment
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
 
+@export var sprite: Texture
+
 var player_in_area = false
 
 func _ready() -> void:

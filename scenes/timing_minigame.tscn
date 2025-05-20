@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv6jiwvqkxads"]
+
+[ext_resource type="Script" uid="uid://7rbu4p3j1pd7" path="res://scripts/timing_minigame.gd" id="1_78grx"]
+[ext_resource type="Texture2D" uid="uid://5gugumx1jc30" path="res://assets/graphics/UI/dialogue_box.png" id="1_igamm"]
+[ext_resource type="Texture2D" uid="uid://dj15gq2x8663q" path="res://assets/graphics/UI/selection_arrow.png" id="2_78grx"]
+[ext_resource type="FontFile" uid="uid://bbyfmunnflpii" path="res://assets/fonts/pixelify_sans/static/PixelifySans-Regular.ttf" id="4_jfs7d"]
+
+[node name="TimingMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_78grx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 466.0
+offset_right = 1132.0
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_igamm")
+
+[node name="Bar" type="ColorRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -3.0
+offset_right = 166.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inside" type="ColorRect" parent="TextureRect/Bar"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 331.0
+offset_bottom = 38.0
+color = Color(0, 0, 0, 1)
+
+[node name="HitZoneVisual" type="ColorRect" parent="TextureRect/Bar"]
+offset_left = 156.0
+offset_top = 2.0
+offset_right = 227.0
+offset_bottom = 38.0
+
+[node name="Indicator" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -51.5
+offset_right = 20.0
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5625
+texture = ExtResource("2_78grx")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -48.0
+offset_right = 349.0
+offset_bottom = 48.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_jfs7d")
+theme_override_font_sizes/font_size = 24
+text = "Press SPACE when the arrow reaches the white rectangle"
+autowrap_mode = 2

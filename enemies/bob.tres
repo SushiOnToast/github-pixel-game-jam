@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://snrlawq7npo7"]
+
+[ext_resource type="Resource" uid="uid://ckalst3oeqcxl" path="res://fightactions/resolve.tres" id="1_6tm4t"]
+[ext_resource type="Script" uid="uid://cdn18x575x8sx" path="res://scripts/base_enemy.gd" id="1_nn0tu"]
+[ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="2_rv5kd"]
+[ext_resource type="Resource" uid="uid://b6sytwueoltxg" path="res://fightactions/compassion.tres" id="2_xfvco"]
+[ext_resource type="Resource" uid="uid://cdws051quxabb" path="res://fightactions/reflect.tres" id="3_uuqkm"]
+
+[resource]
+script = ExtResource("1_nn0tu")
+name = "Bob"
+texture = ExtResource("2_rv5kd")
+health = 50
+damage = 20
+actions = Array[Resource]([ExtResource("1_6tm4t"), ExtResource("2_xfvco"), ExtResource("3_uuqkm")])
+dialogue = Array[String](["Too much pressure...", "I can't keep going...", "Let me rest."])
