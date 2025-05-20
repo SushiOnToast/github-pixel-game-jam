@@ -26,12 +26,12 @@
 [ext_resource type="Resource" uid="uid://d3qbm2dbihulh" path="res://dialogue/conversations/postman.dialogue" id="17_lwlkt"]
 [ext_resource type="Resource" uid="uid://3jdh4l3axnw7" path="res://dialogue/conversations/scout2.dialogue" id="17_r5bpt"]
 [ext_resource type="Texture2D" uid="uid://20l3elpfindu" path="res://assets/graphics/characters/Modern_Exteriors_Characters_Postman_16x16_1.png" id="17_xgikh"]
-[ext_resource type="PackedScene" uid="uid://b21om77dw6euq" path="res://scenes/houses/house1.tscn" id="27_bpyjm"]
-[ext_resource type="PackedScene" uid="uid://ddubxgh8aw1kq" path="res://scenes/houses/house2.tscn" id="27_s5at5"]
-[ext_resource type="PackedScene" uid="uid://2k05iauiuhqt" path="res://scenes/houses/house3.tscn" id="29_eh1ip"]
-[ext_resource type="PackedScene" uid="uid://clcr1qt5b2nqc" path="res://scenes/houses/house4.tscn" id="30_ignml"]
-[ext_resource type="PackedScene" uid="uid://gpfqnw4hxp1w" path="res://scenes/houses/house5.tscn" id="31_5tgo3"]
-[ext_resource type="PackedScene" uid="uid://bhx1ek857hwdq" path="res://scenes/houses/house6.tscn" id="32_o2sbu"]
+[ext_resource type="PackedScene" uid="uid://b21om77dw6euq" path="res://scenes/houses/amelia.tscn" id="27_bpyjm"]
+[ext_resource type="PackedScene" uid="uid://ddubxgh8aw1kq" path="res://scenes/houses/scout1.tscn" id="27_s5at5"]
+[ext_resource type="PackedScene" uid="uid://2k05iauiuhqt" path="res://scenes/houses/alex.tscn" id="29_eh1ip"]
+[ext_resource type="PackedScene" uid="uid://clcr1qt5b2nqc" path="res://scenes/houses/unamed.tscn" id="30_ignml"]
+[ext_resource type="PackedScene" uid="uid://gpfqnw4hxp1w" path="res://scenes/houses/adam.tscn" id="31_5tgo3"]
+[ext_resource type="PackedScene" uid="uid://bhx1ek857hwdq" path="res://scenes/houses/bob.tscn" id="32_o2sbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ds24"]
 texture = ExtResource("2_nq1h2")
@@ -19390,7 +19390,7 @@ shape = SubResource("RectangleShape2D_j2qjn")
 
 [node name="TPZone4" parent="TPZones" instance=ExtResource("11_xdpe8")]
 z_index = 2
-position = Vector2(-347, -547)
+position = Vector2(-1117, 243)
 to_scene = ExtResource("30_ignml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone4"]
