@@ -19390,7 +19390,7 @@ shape = SubResource("RectangleShape2D_j2qjn")
 
 [node name="TPZone4" parent="TPZones" instance=ExtResource("11_xdpe8")]
 z_index = 2
-position = Vector2(-1117, 243)
+position = Vector2(-1115, 243)
 to_scene = ExtResource("30_ignml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZones/TPZone4"]

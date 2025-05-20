@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=4 uid="uid://gpfqnw4hxp1w"]
 
-[ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_prbu4"]
-[ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_8x0ev"]
-[ext_resource type="Texture2D" uid="uid://dd30w4tjvnbui" path="res://assets/graphics/tilesets/interior/home_pack.png" id="3_8x0ev"]
-[ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="3_h7t4x"]
-[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="4_3h26d"]
-[ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="5_1rygj"]
-[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="6_xqlas"]
+[ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_f2if0"]
+[ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_c6wnj"]
+[ext_resource type="Texture2D" uid="uid://dd30w4tjvnbui" path="res://assets/graphics/tilesets/interior/home_pack.png" id="3_e8tq6"]
+[ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="4_ebr7o"]
+[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="5_asi6e"]
+[ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_k0dve"]
+[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_rgydv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
-texture = ExtResource("1_prbu4")
+texture = ExtResource("1_f2if0")
 0:19/size_in_atlas = Vector2i(1, 2)
 0:19/0 = 0
 1:19/size_in_atlas = Vector2i(1, 2)
@@ -225,7 +225,7 @@ texture = ExtResource("1_prbu4")
 3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_se78b"]
-texture = ExtResource("2_8x0ev")
+texture = ExtResource("2_c6wnj")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -1350,7 +1350,7 @@ sources/0 = SubResource("TileSetAtlasSource_qtlar")
 sources/1 = SubResource("TileSetAtlasSource_se78b")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcmgq"]
-texture = ExtResource("1_prbu4")
+texture = ExtResource("1_f2if0")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -1606,7 +1606,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bcmgq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rk7hg"]
-texture = ExtResource("2_8x0ev")
+texture = ExtResource("2_c6wnj")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -2832,7 +2832,7 @@ texture = ExtResource("2_8x0ev")
 9:76/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.1408, -9.32466, 5.47464, -9.46569, 6.3208, 19.8678, -14.269, 19.8678)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7t4x"]
-texture = ExtResource("3_8x0ev")
+texture = ExtResource("3_e8tq6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3005,7 +3005,7 @@ sources/1 = SubResource("TileSetAtlasSource_h7t4x")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aph84"]
 size = Vector2(29, 20)
 
-[node name="House2" type="Node2D"]
+[node name="adam" type="Node2D"]
 
 [node name="Tiles" type="Node" parent="."]
 
@@ -3046,19 +3046,19 @@ position = Vector2(-128, 17)
 tile_map_data = PackedByteArray("AAAHAAAAAAABAEgAAAAHAAEAAAABAEkAAAAIAAAAAAACAEgAAAAIAAEAAAACAEkAAAAJAAAAAAACAEgAAAAJAAEAAAACAEkAAAAKAAEAAAACAEoAAAAKAAIAAAACAEsAAAAKAAAAAAADAEgAAAAHAAIAAAADAEoAAAAGAP//AAANADUAAAAGAAAAAAANADYAAAAGAAEAAAANADcAAAAKAP3/AAABADEAAAAKAP7/AAACADIAAAALAP3/AAAGADEAAAALAP7/AAADADIAAAAKAPz/AAACADAAAAALAPz/AAADADAAAAADAP3/AQAPAAAAAAADAP7/AQAPAAEAAAAEAP3/AQAQAAAAAAAEAP7/AQAQAAEAAAA=")
 tile_set = SubResource("TileSet_se78b")
 
-[node name="PlayerRPG" parent="." instance=ExtResource("3_h7t4x")]
+[node name="PlayerRPG" parent="." instance=ExtResource("4_ebr7o")]
 position = Vector2(113, 69)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="BaseHouse" parent="." instance=ExtResource("4_3h26d")]
+[node name="BaseHouse" parent="." instance=ExtResource("5_asi6e")]
 
-[node name="TPZone" parent="." instance=ExtResource("5_1rygj")]
+[node name="TPZone" parent="." instance=ExtResource("6_k0dve")]
 z_index = 2
 position = Vector2(115, 52)
-to_scene = ExtResource("6_xqlas")
+to_scene = ExtResource("7_rgydv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
 position = Vector2(0.5, 0)

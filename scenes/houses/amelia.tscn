@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=4 uid="uid://b21om77dw6euq"]
 
-[ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_tvcit"]
-[ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_o7yrq"]
-[ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="3_hbjst"]
-[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="4_aph84"]
-[ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="5_ej7u6"]
-[ext_resource type="Texture2D" uid="uid://dd30w4tjvnbui" path="res://assets/graphics/tilesets/interior/home_pack.png" id="5_gufhm"]
-[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="6_gufhm"]
+[ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_4jwbj"]
+[ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="2_q3grx"]
+[ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="3_i2xle"]
+[ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="4_oy7t8"]
+[ext_resource type="Texture2D" uid="uid://dd30w4tjvnbui" path="res://assets/graphics/tilesets/interior/home_pack.png" id="5_258ig"]
+[ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_wskms"]
+[ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_x8ke5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtlar"]
-texture = ExtResource("1_tvcit")
+texture = ExtResource("3_i2xle")
 0:19/size_in_atlas = Vector2i(1, 2)
 0:19/0 = 0
 1:19/size_in_atlas = Vector2i(1, 2)
@@ -209,7 +209,7 @@ texture = ExtResource("1_tvcit")
 3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_se78b"]
-texture = ExtResource("2_o7yrq")
+texture = ExtResource("4_oy7t8")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -1334,7 +1334,7 @@ sources/0 = SubResource("TileSetAtlasSource_qtlar")
 sources/1 = SubResource("TileSetAtlasSource_se78b")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rk7hg"]
-texture = ExtResource("2_o7yrq")
+texture = ExtResource("4_oy7t8")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -2505,7 +2505,7 @@ texture = ExtResource("2_o7yrq")
 9:76/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.1408, -9.32466, 5.47464, -9.46569, 6.3208, 19.8678, -14.269, 19.8678)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8yvf"]
-texture = ExtResource("5_gufhm")
+texture = ExtResource("5_258ig")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2676,16 +2676,16 @@ sources/1 = SubResource("TileSetAtlasSource_g8yvf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aph84"]
 size = Vector2(29, 20)
 
-[node name="House1" type="Node2D"]
+[node name="amelia" type="Node2D"]
 
-[node name="PlayerRPG" parent="." instance=ExtResource("3_hbjst")]
+[node name="PlayerRPG" parent="." instance=ExtResource("1_4jwbj")]
 position = Vector2(159, 65)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRPG"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="BaseHouse" parent="." instance=ExtResource("4_aph84")]
+[node name="BaseHouse" parent="." instance=ExtResource("2_q3grx")]
 
 [node name="Tiles" type="Node" parent="."]
 
@@ -2724,10 +2724,10 @@ z_index = 2
 tile_map_data = PackedByteArray("AAATAP//AAALAAwAAAATAAAAAAALAA0AAAA=")
 tile_set = SubResource("TileSet_se78b")
 
-[node name="TPZone" parent="." instance=ExtResource("5_ej7u6")]
+[node name="TPZone" parent="." instance=ExtResource("6_wskms")]
 z_index = 2
 position = Vector2(162, 57)
-to_scene = ExtResource("6_gufhm")
+to_scene = ExtResource("7_x8ke5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
 position = Vector2(0.5, 0)
