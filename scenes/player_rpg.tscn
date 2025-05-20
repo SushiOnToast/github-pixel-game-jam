@@ -426,6 +426,7 @@ height = 263.0
 script = ExtResource("3_smo8x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.772549)
 y_sort_enabled = true
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_dls5h")

@@ -30,7 +30,7 @@ func _process(delta) -> void:
 		if Input.is_action_just_pressed("quit"):
 			get_tree().quit()
 		if Input.is_action_just_pressed("ui_accept"):
-			state_manager.switch_to(target_scene_path, target_scene_key)
+			state_manager.switch_to("res://scenes/neighbourhood.tscn", "Neighbourhood")
 	
 func _wait_for_balloon_end(balloon: BaseDialogueBalloon) -> void:
 	while is_instance_valid(balloon) and balloon.get_parent() != null:

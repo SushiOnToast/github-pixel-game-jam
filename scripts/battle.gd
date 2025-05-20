@@ -217,7 +217,7 @@ func handle_attack(action: MindDuelAction):
 		await say_text("Enemy defeated")
 		$AnimationPlayer.play("enemy_died")
 		await $AnimationPlayer.animation_finished
-		#state_manager.switch_to()
+		state_manager.switch_to(state_manager.prev_scene_path, state_manager.prev_scene.name)
 		
 	else:
 		turn_state = "ENEMY"
