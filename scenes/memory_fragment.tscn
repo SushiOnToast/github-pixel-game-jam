@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://206m4cggween"]
+[gd_scene load_steps=6 format=3 uid="uid://206m4cggween"]
 
 [ext_resource type="Script" uid="uid://bgsfqavdbemkg" path="res://scripts/memory_fragment.gd" id="1_id57q"]
+[ext_resource type="Texture2D" uid="uid://b6rl6g04a1gf" path="res://icon.svg" id="2_82mqf"]
 [ext_resource type="Texture2D" uid="uid://b830e1fqfe8tx" path="res://assets/graphics/UI/circle_button.png" id="3_82mqf"]
 [ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="3_qyr3t"]
 
@@ -9,6 +10,8 @@ radius = 12.0416
 
 [node name="MemoryFragment" type="Area2D"]
 script = ExtResource("1_id57q")
+sprite = ExtResource("2_82mqf")
+type = "FLOWERS"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i8mg3")
@@ -28,6 +31,13 @@ offset_bottom = 7.0
 theme_override_fonts/font = ExtResource("3_qyr3t")
 theme_override_font_sizes/font_size = 8
 text = "E"
+
+[node name="Sprite" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 7.0
+offset_bottom = 6.0
+texture = ExtResource("2_82mqf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
