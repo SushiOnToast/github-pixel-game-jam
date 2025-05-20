@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://gpfqnw4hxp1w"]
+[gd_scene load_steps=20 format=4 uid="uid://gpfqnw4hxp1w"]
 
 [ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="1_f2if0"]
 [ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="2_c6wnj"]
 [ext_resource type="Texture2D" uid="uid://dd30w4tjvnbui" path="res://assets/graphics/tilesets/interior/home_pack.png" id="3_e8tq6"]
+[ext_resource type="Texture2D" uid="uid://c0rb0o6u64jtl" path="res://assets/graphics/heads/adamsleeping-export.png" id="4_c6wnj"]
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="4_ebr7o"]
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="5_asi6e"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_k0dve"]
@@ -3002,6 +3003,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rk7hg")
 sources/1 = SubResource("TileSetAtlasSource_h7t4x")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8tq6"]
+texture = ExtResource("4_c6wnj")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ebr7o"]
+sources/1 = SubResource("TileSetAtlasSource_e8tq6")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aph84"]
 size = Vector2(29, 20)
 
@@ -3046,6 +3054,12 @@ position = Vector2(-128, 17)
 tile_map_data = PackedByteArray("AAAHAAAAAAABAEgAAAAHAAEAAAABAEkAAAAIAAAAAAACAEgAAAAIAAEAAAACAEkAAAAJAAAAAAACAEgAAAAJAAEAAAACAEkAAAAKAAEAAAACAEoAAAAKAAIAAAACAEsAAAAKAAAAAAADAEgAAAAHAAIAAAADAEoAAAAGAP//AAANADUAAAAGAAAAAAANADYAAAAGAAEAAAANADcAAAAKAP3/AAABADEAAAAKAP7/AAACADIAAAALAP3/AAAGADEAAAALAP7/AAADADIAAAAKAPz/AAACADAAAAALAPz/AAADADAAAAADAP3/AQAPAAAAAAADAP7/AQAPAAEAAAAEAP3/AQAQAAAAAAAEAP7/AQAQAAEAAAA=")
 tile_set = SubResource("TileSet_se78b")
 
+[node name="head" type="TileMapLayer" parent="Tiles"]
+z_index = 2
+position = Vector2(-7, -3)
+tile_map_data = PackedByteArray("AAD8//7/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ebr7o")
+
 [node name="PlayerRPG" parent="." instance=ExtResource("4_ebr7o")]
 position = Vector2(113, 69)
 
@@ -3061,5 +3075,14 @@ position = Vector2(115, 52)
 to_scene = ExtResource("7_rgydv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_aph84")
+
+[node name="TPZone2" parent="." instance=ExtResource("6_k0dve")]
+z_index = 2
+position = Vector2(-43, -6)
+to_scene = ExtResource("7_rgydv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone2"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aph84")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://dbk43lef5ghbs"]
+[gd_scene load_steps=18 format=4 uid="uid://dbk43lef5ghbs"]
 
 [ext_resource type="PackedScene" uid="uid://wtcsvenvwhjc" path="res://scenes/player_rpg.tscn" id="1_4jwbj"]
 [ext_resource type="PackedScene" uid="uid://xo3ccfsi4nfb" path="res://scenes/base_house.tscn" id="2_q3grx"]
 [ext_resource type="Texture2D" uid="uid://cc3qerxis2vak" path="res://assets/graphics/tilesets/interior/Room_Builder_free_16x16.png" id="3_i2xle"]
 [ext_resource type="Texture2D" uid="uid://1se3ovp07g4i" path="res://assets/graphics/tilesets/interior/Interiors_free_16x16.png" id="4_oy7t8"]
 [ext_resource type="Texture2D" uid="uid://dd30w4tjvnbui" path="res://assets/graphics/tilesets/interior/home_pack.png" id="5_258ig"]
+[ext_resource type="Texture2D" uid="uid://dhg8g422an3ce" path="res://assets/graphics/heads/amelia.png" id="6_q3grx"]
 [ext_resource type="PackedScene" uid="uid://bapx8bjrwrida" path="res://scenes/tp_zone.tscn" id="6_wskms"]
 [ext_resource type="PackedScene" uid="uid://b5loh0re42lpl" path="res://scenes/neighbourhood.tscn" id="7_x8ke5"]
 
@@ -2673,6 +2674,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rk7hg")
 sources/1 = SubResource("TileSetAtlasSource_g8yvf")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2xle"]
+texture = ExtResource("6_q3grx")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oy7t8"]
+sources/0 = SubResource("TileSetAtlasSource_i2xle")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aph84"]
 size = Vector2(29, 20)
 
@@ -2724,11 +2732,26 @@ z_index = 2
 tile_map_data = PackedByteArray("AAATAP//AAALAAwAAAATAAAAAAALAA0AAAA=")
 tile_set = SubResource("TileSet_se78b")
 
+[node name="heads" type="TileMapLayer" parent="Tiles"]
+z_index = 2
+position = Vector2(0, -4)
+tile_map_data = PackedByteArray("AAARAPj/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_oy7t8")
+
 [node name="TPZone" parent="." instance=ExtResource("6_wskms")]
 z_index = 2
 position = Vector2(162, 57)
 to_scene = ExtResource("7_x8ke5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_aph84")
+
+[node name="TPZone2" parent="." instance=ExtResource("6_wskms")]
+z_index = 2
+position = Vector2(277, -110)
+to_scene = ExtResource("7_x8ke5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TPZone2"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aph84")

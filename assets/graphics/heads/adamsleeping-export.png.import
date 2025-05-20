@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpcxroa1a81w2"
-path="res://.godot/imported/alex.png-13cac8b0810c481bcee9774f36b347fc.ctex"
+uid="uid://c0rb0o6u64jtl"
+path="res://.godot/imported/adamsleeping-export.png-43cd29cf782f2a138308276fb39e0e66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/heads/alex.png"
-dest_files=["res://.godot/imported/alex.png-13cac8b0810c481bcee9774f36b347fc.ctex"]
+source_file="res://assets/graphics/heads/adamsleeping-export.png"
+dest_files=["res://.godot/imported/adamsleeping-export.png-43cd29cf782f2a138308276fb39e0e66.ctex"]
 
 [params]
 
