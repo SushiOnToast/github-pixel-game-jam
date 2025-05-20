@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_lyd0y")
-name = "Mental Shield"
+name = "RESIST"
 type = 1
 damage = 0
 triggers_minigame = false
-defend_type = "SHIELD"
+defend_type = "RESIST"
 description = "Block emotional damage for a turn"

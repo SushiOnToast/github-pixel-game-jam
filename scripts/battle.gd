@@ -5,7 +5,17 @@ extends Control
 var current_player_health = 0
 var current_enemy_health = 0
 
-var is_defending = false
+var shield_active = false         # Shield reduces damage for next enemy attack
+var skip_next_turn = false        # Skip player's next turn (e.g., due to reflect)
+var buff_next_attack = false      # Next player attack buffed (from shield)
+var is_nullifying = false         # Player currently nullifying (reflect)
+var turn_state = "PLAYER"
+var shield_used = false 
+
+# New debuff states
+var clarity_debuff_active = false    # Next attack damage halved (mental fatigue)
+var reflect_skip_next_turn = false   # Player must skip next turn after reflect
+var enemy_damage_buff_percent = 0.0  # % increase to enemy next attack damage (after reflect)
 
 @onready var buttons = {
 	"attack1": $ActionsPanel/Actions/Attack1Button,
@@ -18,9 +28,8 @@ var is_defending = false
 @onready var enemy_progress: ProgressBar = $MarginContainer/ProgressPanel/EnemyProgress
 
 func say_text(text: String) -> void:
-	
 	$ActionsPanel.hide()
-	var dialogue_text := "~ start\n" + "Narrator: %s" % text
+	var dialogue_text := "~ start\nNarrator: %s" % text
 	var resource = DialogueManager.create_resource_from_text(dialogue_text)
 
 	if resource == null:
@@ -36,12 +45,10 @@ func say_text(text: String) -> void:
 	
 	$ActionsPanel.show()
 
-
 func _ready() -> void:
 	set_health(enemy_progress, enemy.health, enemy.health)
 	set_health(player_progress, State.current_health, State.max_health)
-	
-	# Assign actions to buttons
+
 	buttons["attack1"].text = enemy.actions[0].name
 	buttons["attack2"].text = enemy.actions[1].name
 	buttons["defend"].text = enemy.actions[2].name
@@ -51,12 +58,11 @@ func _ready() -> void:
 		btn.set_meta("action_index", i)
 		btn.pressed.connect(func(): _on_action_button_pressed(btn))
 
-	
 	$Enemy.texture = enemy.texture
-	
+
 	current_player_health = State.current_health
 	current_enemy_health = enemy.health	
-	
+
 	$ActionsPanel.hide()
 	await say_text("%s appears" % enemy.name.to_upper())
 	$ActionsPanel.show()
@@ -67,60 +73,129 @@ func set_health(progress_bar_node, health, max_health):
 	progress_bar_node.get_node("Label").text = "HP:%d/%d" % [health, max_health]
 
 func enemy_turn():
+	$ActionsPanel.hide()
 	await say_text("%s lashes out!" % enemy.name.to_upper())
 
+	if is_nullifying:
+		is_nullifying = false
+		reflect_skip_next_turn = true    # Must skip next player turn after nullify
+		enemy_damage_buff_percent = 0.25  # Increase enemy next attack damage by 25%
+		await say_text("You completely reject the attack, but must recover focus next turn!")
+		turn_state = "PLAYER"
+		$ActionsPanel.show()
+		return
+
 	var damage_taken = enemy.damage
-	if is_defending:
+
+	# Apply enemy damage buff from reflect debuff if active
+	if enemy_damage_buff_percent > 0.0:
+		damage_taken = int(damage_taken * (1.0 + enemy_damage_buff_percent))
+		enemy_damage_buff_percent = 0.0  # Reset after applying once
+
+	if shield_active:
 		damage_taken = int(damage_taken * 0.5)
-		is_defending = false  # Reset flag after one use
-		await say_text("Your guard softened the blow!")
+		await say_text("Your mental barrier softened the blow!")
+		shield_active = false  # Shield used up
 
 	current_player_health = max(0, current_player_health - damage_taken)
 	set_health(player_progress, current_player_health, State.max_health)
-	
+
 	$AnimationPlayer.play("player_damaged")
 	await $AnimationPlayer.animation_finished
-	
 	await say_text("You took %d damage" % damage_taken)
-	
+
+	if current_player_health == 0:
+		await say_text("You lost the duel...")
+		$AnimationPlayer.play("player_died")
+		await $AnimationPlayer.animation_finished
+		# get_tree().change_scene_to_file("res://game_over_scene.tscn")
+
+	turn_state = "PLAYER"
+	$ActionsPanel.show()
+
+func handle_defend(action: MindDuelAction):
+	match action.defend_type:
+		"RESIST":
+			if not shield_used:
+				shield_active = true
+				buff_next_attack = true
+				shield_used = true
+				await say_text("You raise a mental barrier. Your next attack will be empowered!")
+			else:
+				# Shield penalty: skip next turn, but empower next attack
+				skip_next_turn = true
+				buff_next_attack = true
+				await say_text("You strain your mind to maintain the shield and must skip your next turn, but your next attack will be empowered!")
+		"CLARITY":
+			current_player_health = min(State.max_health, current_player_health + action.damage)
+			set_health(player_progress, current_player_health, State.max_health)
+			await say_text("You regain clarity (+%d HP), but your mind feels fatigued..." % action.damage)
+			clarity_debuff_active = true  # Next attack damage halved
+			turn_state = "ENEMY"
+			await enemy_turn()
+			return
+		"REFLECT":
+			is_nullifying = true
+			await say_text("You reflect and reject the negative thought")
+		_:
+			await say_text("You defend yourself")
+
+	# End turn unless HEAL
+	turn_state = "ENEMY"
+	await enemy_turn()
+
 func handle_attack(action: MindDuelAction):
+	# Skip attack if skipping next turn due to shield penalty or reflect debuff
+	if skip_next_turn or reflect_skip_next_turn:
+		if skip_next_turn:
+			await say_text("You maintain your mental barrier and skip this attack.")
+			skip_next_turn = false
+		elif reflect_skip_next_turn:
+			await say_text("You are recovering focus and must skip your attack this turn.")
+			reflect_skip_next_turn = false
+		shield_active = false
+		turn_state = "ENEMY"
+		await enemy_turn()
+		return
+
 	if action.triggers_minigame:
 		await say_text("You prepare for a mental challenge!")
-		# Call your mini-game scene or logic here
-		# Simulate success for now:
-		await say_text("You overcame the guilt!")  # Example
+		# insert minigame trigger here
+		await say_text("You overcame the guilt!")
 	else:
 		await say_text("You strike with: %s" % action.name)
 
-	current_enemy_health = max(0, current_enemy_health - action.damage)
+	var damage = action.damage
+
+	if buff_next_attack:
+		damage = int(damage * 1.5)
+		buff_next_attack = false  # Reset buff after use
+
+	# Apply clarity debuff to halve attack damage
+	if clarity_debuff_active:
+		damage = int(damage * 0.5)
+		clarity_debuff_active = false  # Reset after applying once
+		await say_text("Mental fatigue reduces your attack damage!")
+
+	current_enemy_health = max(0, current_enemy_health - damage)
 	set_health(enemy_progress, current_enemy_health, enemy.health)
+
 	$AnimationPlayer.play("enemy_damaged")
 	await $AnimationPlayer.animation_finished
-
-	await say_text("You dealt %d damage" % action.damage)
+	await say_text("You dealt %d damage" % damage)
 
 	if current_enemy_health == 0:
 		await say_text("Enemy defeated")
 		$AnimationPlayer.play("enemy_died")
 		await $AnimationPlayer.animation_finished
-		
-func handle_defend(action: MindDuelAction):
-	match action.defend_type:
-		"SHIELD":
-			is_defending = true
-			await say_text("You raise a mental barrier")
-		"HEAL":
-			current_player_health = min(State.max_health, current_player_health + action.damage)
-			set_health(player_progress, current_player_health, State.max_health)
-			await say_text("You regain clarity (+%d HP)" % action.damage)
-		"NULLIFY":
-			is_defending = true  # Add extra flag if needed to nullify all enemy damage
-			await say_text("You reject the negative thought")
-		_:
-			await say_text("You defend yourself")
-
+	else:
+		turn_state = "ENEMY"
+		await enemy_turn()
 
 func _on_action_button_pressed(button: Button):
+	if turn_state != "PLAYER":
+		return  # Ignore input if not player's turn
+
 	var index = button.get_meta("action_index") as int
 	var action: MindDuelAction = enemy.actions[index]
 
@@ -129,16 +204,3 @@ func _on_action_button_pressed(button: Button):
 			await handle_attack(action)
 		MindDuelAction.ActionType.DEFEND:
 			await handle_defend(action)
-
-	# If enemy still alive
-	if current_enemy_health > 0:
-		await enemy_turn()
-
-		# Check if player died after enemy's turn
-		if current_player_health == 0:
-			await say_text("You lost the duel...")
-			$AnimationPlayer.play("player_died")
-			await $AnimationPlayer.animation_finished
-			
-			#await say_text("Everything fades to black...")
-			#get_tree().change_scene_to_file("res://game_over_scene.tscn")  # replace with your actual game over scene
