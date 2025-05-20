@@ -1,0 +1,172 @@
+[gd_scene load_steps=16 format=3 uid="uid://blnehggdla3gi"]
+
+[ext_resource type="Script" uid="uid://cnc2nnvwfwrut" path="res://scripts/final_scene.gd" id="1_b6q55"]
+[ext_resource type="FontFile" uid="uid://dr1btho4uwfxr" path="res://assets/fonts/yoster/yoster.ttf" id="2_egufw"]
+[ext_resource type="FontFile" uid="uid://1sqa2244pwmi" path="res://assets/fonts/dedicool/Dedicool.ttf" id="3_r78si"]
+[ext_resource type="Texture2D" uid="uid://b3eo4cbwq17y2" path="res://assets/graphics/characters/player/characteridle.png" id="4_egufw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6q55"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r78si"]
+atlas = ExtResource("4_egufw")
+region = Rect2(288, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytd0m"]
+atlas = ExtResource("4_egufw")
+region = Rect2(304, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwokc"]
+atlas = ExtResource("4_egufw")
+region = Rect2(320, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by4lc"]
+atlas = ExtResource("4_egufw")
+region = Rect2(336, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2ws3"]
+atlas = ExtResource("4_egufw")
+region = Rect2(352, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d32fx"]
+atlas = ExtResource("4_egufw")
+region = Rect2(368, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2vgp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r78si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytd0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwokc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by4lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2ws3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d32fx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_b6q55"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FinalUI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_egufw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FinalUI:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r78si"]
+_data = {
+&"RESET": SubResource("Animation_egufw"),
+&"show": SubResource("Animation_b6q55")
+}
+
+[node name="FinalScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6q55")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FinalUI" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b6q55")
+
+[node name="Title" type="Label" parent="FinalUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.5
+offset_top = -125.5
+offset_right = 440.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_egufw")
+theme_override_font_sizes/font_size = 124
+text = "Until I Know"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Guide" type="Label" parent="FinalUI"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = 15.5
+offset_right = 157.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r78si")
+theme_override_font_sizes/font_size = 32
+text = "Press Q to rest"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FinalUI"]
+position = Vector2(587, 510)
+scale = Vector2(8.625, 8.625)
+sprite_frames = SubResource("SpriteFrames_v2vgp")
+autoplay = "default"
+frame_progress = 0.0522845
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r78si")
+}

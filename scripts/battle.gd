@@ -25,13 +25,15 @@ var enemy_damage_buff_percent = 0.0  # % increase to enemy next attack damage (a
 
 @onready var minigame_scene = preload("res://scenes/timing_minigame.tscn")
 
+@onready var state_manager: StateManager = get_tree().get_root().find_child("StateManager", true, false)
+
 @onready var balloon_scene = preload("res://dialogue/dialogue_balloon.tscn")
 @onready var player_progress: ProgressBar = $MarginContainer/ProgressPanel/PlayerProgress
 @onready var enemy_progress: ProgressBar = $MarginContainer/ProgressPanel/EnemyProgress
 
 func say_text(text: String) -> void:
 	$ActionsPanel.hide()
-	var dialogue_text := "~ start\n ???: %s" % text
+	var dialogue_text := "~ start\n : %s" % text
 	var resource = DialogueManager.create_resource_from_text(dialogue_text)
 
 	if resource == null:
@@ -111,7 +113,7 @@ func enemy_turn():
 		$ActionsPanel.hide()
 		$AnimationPlayer.play("player_died")
 		await $AnimationPlayer.animation_finished
-		# get_tree().change_scene_to_file("res://game_over_scene.tscn")
+		State.game_over = true
 
 	turn_state = "PLAYER"
 	$ActionsPanel.show()
@@ -181,7 +183,7 @@ func handle_attack(action: MindDuelAction):
 		await say_text("You prepare for a mental challenge!")
 		var success = await run_minigame()
 		if success:
-			await say_text("You pusehd through!")
+			await say_text("You pushed through!")
 		else:
 			await say_text("You failed the mental challenge!")
 			# Skip damage application and enemy turn; or just end turn
@@ -215,6 +217,8 @@ func handle_attack(action: MindDuelAction):
 		await say_text("Enemy defeated")
 		$AnimationPlayer.play("enemy_died")
 		await $AnimationPlayer.animation_finished
+		#state_manager.switch_to()
+		
 	else:
 		turn_state = "ENEMY"
 		await enemy_turn()
