@@ -38,15 +38,17 @@ func _process(_delta: float) -> void:
 	var is_night = true
 	if not is_house:
 		is_night = day_night_manager.is_night
+		
+	if house_mapping.has(parent_name.to_lower()) and battle:
+		if State.memory_fragment_tracking[parent_name.to_lower()]:
+			queue_free()
 
 	if is_house or is_night:
 		if player_in_area and Input.is_action_just_pressed("interact"):
 			if house_mapping.has(parent_name.to_lower()) and battle:
 				var enemy_path = house_mapping[parent_name.to_lower()]
-				var enemy_resource = load(enemy_path)
-				var battle_instance = battle_scene.instantiate()
-				battle_instance.enemy = enemy_resource  # OR use a method if needed
-				state_manager.switch_to(battle_instance, "Battle")
+				State.current_battle = enemy_path
+				state_manager.switch_to("res://scenes/battle.tscn", "Battle")
 			else:
 				state_manager.switch_to(to_scene_path, to_scene_key)
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cgg6647010e4d"
+path="res://.godot/imported/bob.dialogue-b52fca2451094b7b55e3e4e3fdaec3a0.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/fragments/bob.dialogue"
+dest_files=["res://.godot/imported/bob.dialogue-b52fca2451094b7b55e3e4e3fdaec3a0.tres"]
+
+[params]
+
+defaults=true

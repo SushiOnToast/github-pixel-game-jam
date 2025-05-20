@@ -11,8 +11,10 @@ class_name MemoryFragment
 @export var type: String
 
 var player_in_area = false
+var interacted = false
 
 func _ready() -> void:
+	self.visible = false
 	texture_rect.visible = false
 	label.visible = false
 	state_manager = get_tree().get_root().find_child("StateManager", true, false)
@@ -40,12 +42,26 @@ func _process(delta: float) -> void:
 	else:
 		texture_rect.visible = false
 		label.visible = false
+		
+	if State.memory_fragment_tracking[get_parent().name.to_lower()]:
+		self.visible = true
 	
-	if player_in_area and Input.is_action_just_pressed("interact"):
+	if player_in_area and Input.is_action_just_pressed("interact") and not interacted:
+		interacted = true	
 		state_manager.collected_fragments[get_parent().name.to_lower()] = true
-		say_text("You picked up %s" % type.to_upper())
-		state_manager.switch_to("res://scenes/neighbourhood.tscn", "Neighbourhood")
+		await say_text("You picked up %s" % type.to_upper())
+		
+		await get_tree().create_timer(1).timeout
+		
+		var balloon: BaseDialogueBalloon = balloon_scene.instantiate()
+		get_tree().current_scene.add_child(balloon)
+		balloon.start(load("res://dialogue/conversations/fragments/%s.dialogue" % get_parent().name.to_lower()), "start")
+		await _wait_for_balloon_end(balloon)
 		queue_free()
+		
+func _wait_for_balloon_end(balloon: BaseDialogueBalloon) -> void:
+	while is_instance_valid(balloon) and balloon.get_parent() != null:
+		await get_tree().process_frame
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	player_in_area = true

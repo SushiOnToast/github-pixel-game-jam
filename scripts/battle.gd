@@ -50,6 +50,7 @@ func say_text(text: String) -> void:
 	$ActionsPanel.show()
 
 func _ready() -> void:
+	enemy =  load(State.current_battle)
 	set_health(enemy_progress, enemy.health, enemy.health)
 	set_health(player_progress, State.current_health, State.max_health)
 
@@ -113,7 +114,7 @@ func enemy_turn():
 		$ActionsPanel.hide()
 		$AnimationPlayer.play("player_died")
 		await $AnimationPlayer.animation_finished
-		State.game_over = true
+		state_manager.switch_to("res://scenes/game_over.tscn", "GameOver")
 
 	turn_state = "PLAYER"
 	$ActionsPanel.show()
@@ -217,6 +218,7 @@ func handle_attack(action: MindDuelAction):
 		await say_text("Enemy defeated")
 		$AnimationPlayer.play("enemy_died")
 		await $AnimationPlayer.animation_finished
+		State.memory_fragment_tracking[State.key_dict[State.tp_dict[State.current_battle]]] = true
 		state_manager.switch_to(state_manager.prev_scene_path, state_manager.prev_scene.name)
 		
 	else:

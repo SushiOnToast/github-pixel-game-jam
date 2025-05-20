@@ -12,8 +12,6 @@ func _ready() -> void:
 	state_manager.show_menu()
 
 func _process(delta: float) -> void:
-	if State.game_over:
-		state_manager.switch_to("res://scenes/game_over.tscn", "GameOver")
 	if state_manager.collected_fragments.size() == 5:
 		await get_tree().create_timer(2.0).timeout
 		state_manager.switch_to("res://scenes/final_scene.tscn", "FinalScene")
