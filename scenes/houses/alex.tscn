@@ -3101,6 +3101,7 @@ shape = SubResource("RectangleShape2D_aph84")
 z_index = 2
 position = Vector2(30, -7)
 sprite = ExtResource("10_jdf3k")
+type = "PICNIC BASKET"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-17, -8)
