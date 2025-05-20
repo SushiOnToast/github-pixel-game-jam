@@ -216,10 +216,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="Enemy" type="TextureRect" parent="."]
 layout_mode = 2
-offset_left = 980.0
-offset_top = 287.0
-offset_right = 1108.0
-offset_bottom = 415.0
+offset_left = 645.0
+offset_top = 2.0
+offset_right = 773.0
+offset_bottom = 130.0
+scale = Vector2(4.83, 4.83)
 size_flags_horizontal = 8
 texture = ExtResource("1_dn72j")
 stretch_mode = 3

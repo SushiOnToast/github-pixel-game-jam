@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://crywy6cbmpl4n"]
 
-[ext_resource type="Resource" path="res://fightactions/resolve.tres" id="1_7b1xp"]
-[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_i4kty"]
-[ext_resource type="Resource" path="res://fightactions/compassion.tres" id="2_6t68m"]
-[ext_resource type="Resource" path="res://fightactions/reflect.tres" id="3_7b1xp"]
+[ext_resource type="Resource" uid="uid://ckalst3oeqcxl" path="res://fightactions/resolve.tres" id="1_7b1xp"]
+[ext_resource type="Script" uid="uid://cdn18x575x8sx" path="res://scripts/base_enemy.gd" id="1_i4kty"]
+[ext_resource type="Resource" uid="uid://b6sytwueoltxg" path="res://fightactions/compassion.tres" id="2_6t68m"]
+[ext_resource type="Resource" uid="uid://cdws051quxabb" path="res://fightactions/reflect.tres" id="3_7b1xp"]
 [ext_resource type="Texture2D" uid="uid://cnm4v351olgoh" path="res://assets/graphics/fight/shadow.png" id="5_7b1xp"]
 
 [resource]
