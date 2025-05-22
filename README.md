@@ -1,6 +1,6 @@
 # Until I Know
 
-Game showcased (here)[https://sh1kha.itch.io/untill-i-know]
+Game showcased [here](https://sh1kha.itch.io/untill-i-know)
 
 You’re dead. You just don’t know why.
 
